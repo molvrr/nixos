@@ -7,28 +7,28 @@
 
   home.packages = with pkgs;
   [
+    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    aria2
+    bitwarden
+    calibre
+    discord
     docker
     docker-compose
-    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
-    nyxt
-    bitwarden
-    lutris
-    spotify
-    discord
-    krita
-    calibre
-    obs-studio
-    mgba
-    yacreader
     ffmpeg
-    rnix-lsp
-    aria2
-    steam
-    mpv
-    virt-manager
-    nodejs_20
-    zoom-us
     gh
+    krita
+    lutris
+    mgba
+    mpv
+    nodejs_20
+    nyxt
+    obs-studio
+    rnix-lsp
+    spotify
+    steam
+    virt-manager
+    yacreader
+    zoom-us
   ];
 
   home.file = let
