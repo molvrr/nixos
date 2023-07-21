@@ -12,14 +12,12 @@
     bitwarden
     calibre
     discord
-    docker
-    docker-compose
     ffmpeg
     gh
     krita
     lutris
+    minecraft
     mgba
-    mpv
     nodejs_20
     nyxt
     obs-studio
@@ -29,6 +27,7 @@
     virt-manager
     yacreader
     zoom-us
+    wineWowPackages.full
   ];
 
   home.file = let
@@ -43,12 +42,27 @@
       source = "${dotfiles}/nvim/.config/nvim";
       recursive = true;
     };
-    ".emacs.d" = {
-      source = "${dotfiles}/emacs/.emacs.d";
-      recursive = true;
-    };
+    # ".emacs.d" = {
+    #   source = "${dotfiles}/emacs/.emacs.d";
+    #   recursive = true;
+    # };
     ".tmux.conf".source = "${dotfiles}/tmux/.tmux.conf";
   };
 
   programs.home-manager.enable = true;
+
+
+  programs.mpv = {
+    enable = true;
+    bindings = {
+      WHEEL_UP = "add volume 2";
+      WHEEL_DOWN = "add volume -2";
+    };
+    config = {
+      slang = "eng,fr,pt";
+      alang = "jpn,eng,pt";
+      geometry = "50%:50%";
+      volume = "75";
+    };
+  };
 }

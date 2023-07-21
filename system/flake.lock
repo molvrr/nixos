@@ -15,9 +15,26 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-docker": {
+      "locked": {
+        "lastModified": 1689902040,
+        "narHash": "sha256-9dxh+O6ds9PPlazLAupZmCW+r2Mv0eQvfaNS5UIHA68=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "95432a7b2e9b25f320c80bad0b2b65f0dc7d2c25",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "95432a7b2e9b25f320c80bad0b2b65f0dc7d2c25",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-docker": "nixpkgs-docker"
       }
     }
   },

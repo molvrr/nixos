@@ -34,6 +34,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.pantheon.enable = true;
+
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.exportConfiguration = true;
   services.xserver = {
@@ -90,6 +91,7 @@
   ];
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.dockerzin.docker;
   virtualisation.libvirtd.enable = true;
 
   programs.neovim = {
