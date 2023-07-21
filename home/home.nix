@@ -5,12 +5,13 @@
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
 
-  home.packages = with pkgs;
-  [
+  home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     aria2
+    blender
     bitwarden
     calibre
+    davinci.davinci-resolve
     discord
     ffmpeg
     gh
@@ -28,6 +29,8 @@
     yacreader
     zoom-us
     wineWowPackages.full
+    youtube-dl
+    weechat
   ];
 
   home.file = let
@@ -50,7 +53,6 @@
   };
 
   programs.home-manager.enable = true;
-
 
   programs.mpv = {
     enable = true;

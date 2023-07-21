@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -47,6 +44,11 @@
   services.printing.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -86,9 +88,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    pulseaudio
-  ];
+  environment.systemPackages = with pkgs; [ pulseaudio ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.package = pkgs.dockerzin.docker;
