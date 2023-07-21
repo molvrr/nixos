@@ -91,7 +91,7 @@
   environment.systemPackages = with pkgs; [ pulseaudio ];
 
   virtualisation.docker.enable = true;
-  virtualisation.docker.package = pkgs.dockerzin.docker;
+  virtualisation.docker.package = pkgs.unstable.docker;
   virtualisation.libvirtd.enable = true;
 
   programs.neovim = {

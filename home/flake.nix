@@ -3,20 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    nixpkgs-bleeding.url = "github:nixos/nixpkgs";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nixpkgs-davinci.url =
-      "github:jshcmpbll/nixpkgs?rev=391eaa6e7106c0e91e77073a1496b8548b68438b";
+      "github:jshcmpbll/nixpkgs?rev=391eaa6e7106c0e91e77073a1496b8548b68438b"; # TODO: Remover após atualização do nixos-23.05
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-bleeding, nixpkgs-davinci, ... }:
+  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, ... }:
     let
       system = "x86_64-linux";
-      overlay-superbleeding = final: prev: {
-        superbleeding = import nixpkgs-bleeding {
+      overlay-unstable = final: prev: {
+        unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
         };
@@ -36,7 +36,7 @@
         inherit pkgs;
         modules = [
           ({ config, pkgs, ... }: {
-            nixpkgs.overlays = [ overlay-superbleeding overlay-davinci ];
+            nixpkgs.overlays = [ overlay-unstable overlay-davinci ];
           })
           ./home.nix
         ];

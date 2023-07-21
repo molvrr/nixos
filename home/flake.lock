@@ -37,21 +37,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-bleeding": {
-      "locked": {
-        "lastModified": 1689945909,
-        "narHash": "sha256-167y1s9w4CV+CjetiTKZdhIeQS/OGCMfwK1DfWGPFRM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "1708e6ad6340829bda29739ffa16a33c124cffd1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-davinci": {
       "locked": {
         "lastModified": 1689041627,
@@ -68,12 +53,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1689850295,
+        "narHash": "sha256-fUYf6WdQlhd2H+3aR8jST5dhFH1d0eE22aes8fNIfyk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5df4d78d54f7a34e9ea1f84a22b4fd9baebc68d0",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-bleeding": "nixpkgs-bleeding",
-        "nixpkgs-davinci": "nixpkgs-davinci"
+        "nixpkgs-davinci": "nixpkgs-davinci",
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
