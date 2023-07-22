@@ -10,9 +10,10 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:12Boti/nix-minecraft";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, ... }:
+  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, nix-minecraft, ... }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
@@ -38,6 +39,8 @@
           ({ config, pkgs, ... }: {
             nixpkgs.overlays = [ overlay-unstable overlay-davinci ];
           })
+          # nix-minecraft.nixosModules.home-manager.minecraft
+          ./modules/minecraft
           ./home.nix
         ];
       };

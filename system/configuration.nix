@@ -100,4 +100,12 @@
   };
   system.stateVersion = "23.05";
 
+  services.udev = {
+    enable = true;
+    extraRules = ''
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0951", ATTRS{idProduct}=="16c4", MODE="0666"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0951", ATTRS{idProduct}=="1723", MODE="0666"
+    '';
+  };
+
 }

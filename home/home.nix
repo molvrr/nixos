@@ -17,7 +17,6 @@
     gh
     krita
     lutris
-    minecraft
     mgba
     nodejs_20
     nyxt
@@ -53,6 +52,8 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.minecraft.enable = true;
 
   programs.mpv = {
     enable = true;
