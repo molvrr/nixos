@@ -127,4 +127,9 @@
       };
     };
   };
+
+  fileSystems = {
+    "/mnt/Arquivos".device = "/dev/sda1";
+    "/mnt/Jogos".device = "/dev/sdb1";
+  };
 }
