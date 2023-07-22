@@ -108,4 +108,21 @@
     '';
   };
 
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers = {
+      pihole = {
+        autoStart = true;
+        image = "pihole/pihole:2023.05.2";
+        ports = [ "53:53/tcp" "53:53/udp" "80:80/tcp" ];
+        environment = {
+          TZ = "America/Sao_Paulo";
+        };
+        volumes = [ 
+          "etcPihole:/etc/pihole"
+          "etcDnsmasqD:/etc/dnsmasq.d"
+        ];
+      };
+    };
+  };
 }
