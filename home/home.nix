@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "mateus";
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    (nerdfonts.override {fonts = ["SourceCodePro"];})
     aria2
     bitwarden
     blender
@@ -34,12 +36,12 @@
   ];
 
   home.file = let
-        rofi-themes = pkgs.fetchFromGitHub {
-          owner = "adi1090x";
-          repo = "rofi";
-          rev = "4ede82c488d45803ca0ffbc062154373025d14ac";
-          hash = "sha256-pF3qSKDtDhvviMqVPk6WKIQjt5XI0ZuD+g97c3sncTU=";
-        };
+    rofi-themes = pkgs.fetchFromGitHub {
+      owner = "adi1090x";
+      repo = "rofi";
+      rev = "4ede82c488d45803ca0ffbc062154373025d14ac";
+      hash = "sha256-pF3qSKDtDhvviMqVPk6WKIQjt5XI0ZuD+g97c3sncTU=";
+    };
 
     dotfiles = pkgs.fetchFromGitHub {
       owner = "molvrr";
@@ -200,46 +202,43 @@
     };
   };
 
-  xsession.windowManager.i3 =
-    let
-      mod = "Mod4";
-    in
-    {
-      enable = true;
-      config = {
-        modifier = mod;
-        fonts = {
-          names = ["SourceCodePro Nerd Font Mono"];
-          size = 11.0;
-        };
-
-        keybindings = pkgs.lib.mkOptionDefault {
-          "${mod}+j" = "focus down";
-          "${mod}+k" = "focus up";
-          "${mod}+l" = "focus right";
-          "${mod}+h" = "focus left";
-          "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
-          "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
-        };
-
-        terminal = "alacritty";
-
-        window.titlebar = false;
-        # menu = "rofi -show combi";
-        menu = "rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi";
-        bars = [];
+  xsession.windowManager.i3 = let
+    mod = "Mod4";
+  in {
+    enable = true;
+    config = {
+      modifier = mod;
+      fonts = {
+        names = ["SourceCodePro Nerd Font Mono"];
+        size = 11.0;
       };
-    };
 
-    programs.rofi =
-      {
-      enable = true;
-      package = pkgs.rofi.override { plugins = with pkgs; [ rofi-emoji rofi-calc ]; };
-      theme = "gruvbox-dark-hard";
-      extraConfig = {
-        modes = "window,drun,emoji,calc";
-        combi-modes = "window,drun,emoji";
-        show-icons = true;
+      keybindings = pkgs.lib.mkOptionDefault {
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
+        "${mod}+h" = "focus left";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
       };
+
+      terminal = "alacritty";
+
+      window.titlebar = false;
+      # menu = "rofi -show combi";
+      menu = "rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi";
+      bars = [];
     };
-  }
+  };
+
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi.override {plugins = with pkgs; [rofi-emoji rofi-calc];};
+    theme = "gruvbox-dark-hard";
+    extraConfig = {
+      modes = "window,drun,emoji,calc";
+      combi-modes = "window,drun,emoji";
+      show-icons = true;
+    };
+  };
+}
