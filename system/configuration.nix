@@ -137,4 +137,6 @@
     enable = true;
     daemon.enable = true;
   };
+
+  services.flatpak.enable = true;
 }
