@@ -8,6 +8,11 @@ in
   options = {
     programs.minecraft = {
       enable = mkEnableOption "Minecraft";
+      # versions = mkOption {
+      #   type = types.listOf types.str;
+      #   default = [ "1.20.1" ];
+      #   description = "Minecraft versions to install";
+      # };
     };
   };
 

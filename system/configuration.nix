@@ -31,6 +31,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.windowManager.i3.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.exportConfiguration = true;
@@ -39,7 +40,8 @@
     xkbVariant = "alt-intl";
   };
 
-  console.keyMap = "dvorak";
+  # console.keyMap = "dvorak";
+  console.useXkbConfig = true;
 
   services.printing.enable = true;
 

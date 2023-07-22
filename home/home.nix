@@ -68,4 +68,48 @@
       volume = "75";
     };
   };
+
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+  };
+
+  xsession.enable = true;
+
+  xsession.windowManager.i3 =
+    let
+      mod = "Mod4";
+    in
+    {
+      enable = true;
+      config = {
+        modifier = mod;
+        fonts = {
+          names = ["SourceCodePro Nerd Font Mono"];
+          size = 11.0;
+        };
+
+        keybindings = pkgs.lib.mkOptionDefault {
+          "${mod}+j" = "focus down";
+          "${mod}+k" = "focus up";
+          "${mod}+l" = "focus right";
+          "${mod}+h" = "focus left";
+        };
+
+        terminal = "alacritty";
+
+        window.titlebar = false;
+        menu = "${pkgs.rofi}/bin/rofi -show drun";
+        # window.hideEdgeBorders = "both";
+        # window.border = 0;
+
+        bars = [
+          {
+            position = "bottom";
+            statusCommand = "${pkgs.i3status}/bin/i3status ${./i3status-rust.toml}";
+          }
+        ];
+      };
+    };
 }
