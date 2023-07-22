@@ -39,8 +39,6 @@
           ({ config, pkgs, ... }: {
             nixpkgs.overlays = [ overlay-unstable overlay-davinci ];
           })
-          # nix-minecraft.nixosModules.home-manager.minecraft
-          ./modules/minecraft
           ./home.nix
         ];
       };

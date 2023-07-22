@@ -3,17 +3,24 @@
   pkgs,
   ...
 }: {
+
+  imports = [
+    ./modules/minecraft
+  ];
+
   home.username = "mateus";
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
     (nerdfonts.override {fonts = ["SourceCodePro"];})
+    alejandra
     aria2
     bitwarden
     blender
     calibre
     davinci.davinci-resolve
+    direnv
     discord
     ffmpeg
     gh
@@ -22,6 +29,7 @@
     libnotify
     lutris
     mgba
+    nixfmt
     nodejs_20
     nyxt
     obs-studio
@@ -51,8 +59,8 @@
     dotfiles = pkgs.fetchFromGitHub {
       owner = "molvrr";
       repo = "dotfiles";
-      rev = "d14407e028cd99d3bbf82746ba07a66e9ff512f4";
-      hash = "sha256-DrsXNMo0N5I91ojLp3Ey6/2kUCAX35qbzAjceO/7JQs=";
+      rev = "4e84e2c833fc5e8f964343b3f33537356e0dadd8";
+      hash = "sha256-tf9qCqDu7p+qgYzypltrG5bx4KDHJ/ru4P/pA+lvRWU=";
     };
   in {
     ".config/nvim" = {
@@ -251,7 +259,7 @@
       "module/date" = {
         type = "internal/date";
         internal = 1;
-        date = "%H:%M:%S";
+        date = "%H:%M:%S %d/%m/%Y";
         label = "%date%";
         label-foreground = "\${colors.foreground}";
       };
@@ -292,6 +300,13 @@
         size = 11.0;
       };
 
+      startup = [
+        { command = "firefox"; }
+        { command = "spotify"; }
+        { command = "discord"; }
+        { command = "~/.fehbg"; }
+      ];
+
       keybindings = pkgs.lib.mkOptionDefault {
         "${mod}+0" = "workspace number 0";
         "${mod}+Shift+0" = "move container to workspace number 0";
@@ -299,6 +314,10 @@
         "${mod}+k" = "focus up";
         "${mod}+l" = "focus right";
         "${mod}+h" = "focus left";
+        "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+k" = "move up";
+        "${mod}+Shift+l" = "move right";
+        "${mod}+Shift+h" = "move left";
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
         "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
@@ -310,8 +329,20 @@
 
       terminal = "alacritty";
 
-      window.titlebar = false;
-      # menu = "rofi -show combi";
+      window =  {
+        # hideEdgeBorders = "none";
+        hideEdgeBorders = "both";
+        titlebar = false;
+      };
+
+      defaultWorkspace = "workspace number 1";
+
+      assigns = {
+        "1" = [{ class = "^firefox$"; }];
+        "3" = [{ class = "^discord$"; }];
+        "4" = [{ class = "^Spotify$"; }];
+      };
+
       menu = "rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi";
       bars = [];
 

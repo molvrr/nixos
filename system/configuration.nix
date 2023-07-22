@@ -138,5 +138,9 @@
     daemon.enable = true;
   };
 
+  hardware.nvidia = {
+    modesetting.enable = true;
+  };
+
   services.flatpak.enable = true;
 }

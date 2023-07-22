@@ -13,6 +13,14 @@ in
       #   default = [ "1.20.1" ];
       #   description = "Minecraft versions to install";
       # };
+      options = mkOption {
+        description = "Minecraft options";
+        type = with types; attrsOf (submodule {
+          options = {
+            guiScale = mkOption { type = int; };
+          };
+        });
+      };
     };
   };
 
@@ -23,5 +31,8 @@ in
     mkIf cfg.enable
   {
     home.file.".minecraft/clients/1.20.1/run".source = "${client}/run";
+    home.file.".minecraft/clients/1.20.1/options.txt".text = ''
+      guiScale:2
+    '';
   };
 }
