@@ -23,6 +23,7 @@
     nodejs_20
     nyxt
     obs-studio
+    playerctl
     pinentry
     rnix-lsp
     spotify
@@ -129,6 +130,8 @@
         separator-foreground = "\${colors.disabled}";
         font-0 = "monospace";
 
+        tray-position = "right";
+
         modules-left = "xworkspaces xwindow";
         # modules-right = "filesystem pulseaudio xkeyboard memory cpu wlan eth date";
         modules-right = "filesystem alsa xkeyboard date";
@@ -220,6 +223,10 @@
         "${mod}+h" = "focus left";
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioPlay" = "exec --no-startup-id playerctl play-pause";
+        "XF86AudioNext" = "exec --no-startup-id playerctl next";
+        "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
       };
 
       terminal = "alacritty";
