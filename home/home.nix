@@ -93,6 +93,8 @@
     vSync = true;
   };
 
+  services.dunst.enable = true;
+
   xsession.enable = true;
 
   services.polybar = {
