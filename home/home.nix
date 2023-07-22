@@ -17,14 +17,17 @@
     discord
     ffmpeg
     gh
+    imagemagick
     krita
+    libnotify
     lutris
     mgba
     nodejs_20
     nyxt
     obs-studio
-    playerctl
+    osu-lazer
     pinentry
+    playerctl
     rnix-lsp
     spotify
     steam
@@ -227,6 +230,7 @@
         "XF86AudioPlay" = "exec --no-startup-id playerctl play-pause";
         "XF86AudioNext" = "exec --no-startup-id playerctl next";
         "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
+        "--release Print" = "exec (import png:- | xclip -t image/png -selection clipboard)";
       };
 
       terminal = "alacritty";
