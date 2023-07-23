@@ -9,7 +9,7 @@ let
     pkgs.libGL
   ];
   versionManifest = {
-    url = "https://launchermeta.mojang.com/mc/game/version_manifest_v2.json";
+    url = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json";
     sha256 = "sha256-HiGfO13R/3KPuKXyglOI+YaTzf2AvyGeElciPJGiEL8=";
   };
   versionManifestData =
@@ -71,6 +71,7 @@ in {
                     else
                       "$out/assets"
                   }" \
+                  --add-flags "--userProperties {}" \
                   --add-flags "--assetIndex ${versionInfo.assets}" \
                   --add-flags "--accessToken hehe" \
                   --add-flags "--username ${username}" \

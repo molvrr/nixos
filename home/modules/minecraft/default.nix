@@ -10,8 +10,10 @@ let
     };
   };
 
+  settingsType = with types; attrsOf anything;
+
   clientType = with types;
-    submodule { options = { version = mkOption { type = str; }; }; };
+    submodule { options = { version = mkOption { type = str; }; settings = mkOption { type = settingsType; }; }; };
 in {
   options = {
     programs.minecraft = {
@@ -28,6 +30,7 @@ in {
       let client = mkClient val;
       in acc // {
         ".minecraft/clients/${clientName}/run".source = "${client.data}/run";
+        ".minecraft/clients/${clientName}/options.txt".text = foldlAttrs (acc': key': val': "${acc'}${key'}:${toString val'}\n") "" val.settings;
       }) { } cfg.clients);
   };
 }
