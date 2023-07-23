@@ -1,38 +1,33 @@
 { config, lib, pkgs, ... }:
-with lib;
 let
   cfg = config.programs.minecraft;
+  inherit (lib) mkOption types mkIf foldlAttrs mkEnableOption;
   helpers = import ./helpers.nix { inherit lib pkgs; };
-in
-{
+  mkClient = client: {
+    data = helpers.buildMinecraftClient {
+      version = client.version;
+      username = "boop";
+    };
+  };
+
+  clientType = with types;
+    submodule { options = { version = mkOption { type = str; }; }; };
+in {
   options = {
     programs.minecraft = {
       enable = mkEnableOption "Minecraft";
-      # versions = mkOption {
-      #   type = types.listOf types.str;
-      #   default = [ "1.20.1" ];
-      #   description = "Minecraft versions to install";
-      # };
-      options = mkOption {
-        description = "Minecraft options";
-        type = with types; attrsOf (submodule {
-          options = {
-            guiScale = mkOption { type = int; };
-          };
-        });
+      clients = mkOption {
+        description = "Minecraft client";
+        type = with types; attrsOf clientType;
       };
     };
   };
 
-  config =
-    let
-      client = (helpers.buildMinecraftClient { version = "1.20.1"; username = "boop"; });
-    in
-    mkIf cfg.enable
-  {
-    home.file.".minecraft/clients/1.20.1/run".source = "${client}/run";
-    home.file.".minecraft/clients/1.20.1/options.txt".text = ''
-      guiScale:2
-    '';
+  config = mkIf cfg.enable {
+    home.file = (foldlAttrs (acc: clientName: val:
+      let client = mkClient val;
+      in acc // {
+        ".minecraft/clients/${clientName}/run".source = "${client.data}/run";
+      }) { } cfg.clients);
   };
 }

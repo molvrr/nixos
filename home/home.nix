@@ -86,7 +86,22 @@
 
   programs.home-manager.enable = true;
 
-  programs.minecraft.enable = true;
+  programs.minecraft = {
+    enable = true;
+    clients = {
+      "1.20.1" = {
+        version = "1.20.1";
+      };
+
+      "1.6.4" = {
+        version = "1.6.4";
+      };
+
+      "1.18" = {
+        version = "1.18";
+      };
+    };
+  };
 
   programs.mpv = {
     enable = true;
