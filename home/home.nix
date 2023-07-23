@@ -1,4 +1,12 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  dotfiles = pkgs.fetchFromGitHub {
+    owner = "molvrr";
+    repo = "dotfiles";
+    rev = "5123b38086e0ed0df3b75d2520d44854e958b7bf";
+    hash = "sha256-zWJNM1rwiAMxyy5y0mFl8pWia5DGRW3xuziWyNHKi3s=";
+  };
+in {
   imports = [
     ./modules/dunst.nix
     ./modules/i3.nix
@@ -59,22 +67,15 @@
     zoom-us
   ];
 
-  home.file = let
-    dotfiles = pkgs.fetchFromGitHub {
-      owner = "molvrr";
-      repo = "dotfiles";
-      rev = "f764d9eee4fee1483bc08b84b3ec1a60c3a58e13";
-      hash = "sha256-Uo4A96ZD3bHktaQn0pRaPkb8sLGeXjQGHl5xZHQ37Cw=";
-    };
-  in {
-    # ".config/nvim" = {
-    #   source = "${dotfiles}/nvim/.config/nvim";
-    #   recursive = true;
-    # };
-    # ".emacs.d" = {
-    #   source = "${dotfiles}/emacs/.emacs.d";
-    #   recursive = true;
-    # };
-    # ".tmux.conf".source = "${dotfiles}/tmux/.tmux.conf";
+  programs.starship = {
+    enable = true;
+    settings = { add_newline = false; };
+    enableNushellIntegration = true;
+  };
+
+  programs.nushell = {
+    enable = true;
+    configFile.source = "${dotfiles}/nushell/config.nu";
+    envFile.source = "${dotfiles}/nushell/env.nu";
   };
 }

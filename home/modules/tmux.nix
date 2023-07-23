@@ -12,6 +12,7 @@
     plugins = with pkgs; [
       tmuxPlugins.resurrect
       tmuxPlugins.continuum
+      tmuxPlugins.gruvbox
     ];
     extraConfig = ''
       set -g default-terminal 'screen-256color'
