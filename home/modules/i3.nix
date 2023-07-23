@@ -59,7 +59,6 @@
         "4" = [{ class = "^Spotify$"; }];
       };
 
-      # menu = "rofi -show";
       menu =
         "rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi";
       bars = [ ];

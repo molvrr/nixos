@@ -11,6 +11,11 @@
       source = "${rofi-themes}/fonts";
       recursive = true;
     };
+
+    ".config/rofi" = {
+      source = "${rofi-themes}/files";
+      recursive = true;
+    };
   };
   programs.rofi = {
     enable = true;
