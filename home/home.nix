@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     (nerdfonts.override {fonts = ["SourceCodePro"];})
+    alacritty
     alejandra
     aria2
     bitwarden
@@ -22,13 +23,20 @@
     davinci.davinci-resolve
     direnv
     discord
+    emacs
+    fd
     ffmpeg
+    firefox
+    fzf
+    gcc
     gh
+    gnumake
     imagemagick
     krita
     libnotify
     lutris
     mgba
+    neovim
     nixfmt
     nodejs_20
     nyxt
@@ -36,12 +44,16 @@
     osu-lazer
     pinentry
     playerctl
+    ripgrep
     rnix-lsp
+    ruby
     spotify
     steam
+    tmux
     virt-manager
     weechat
     wineWowPackages.full
+    xclip
     xdg-desktop-portal-gtk
     yacreader
     youtube-dl
@@ -59,14 +71,14 @@
     dotfiles = pkgs.fetchFromGitHub {
       owner = "molvrr";
       repo = "dotfiles";
-      rev = "4e84e2c833fc5e8f964343b3f33537356e0dadd8";
-      hash = "sha256-tf9qCqDu7p+qgYzypltrG5bx4KDHJ/ru4P/pA+lvRWU=";
+      rev = "f764d9eee4fee1483bc08b84b3ec1a60c3a58e13";
+      hash = "sha256-Uo4A96ZD3bHktaQn0pRaPkb8sLGeXjQGHl5xZHQ37Cw=";
     };
   in {
-    ".config/nvim" = {
-      source = "${dotfiles}/nvim/.config/nvim";
-      recursive = true;
-    };
+    # ".config/nvim" = {
+    #   source = "${dotfiles}/nvim/.config/nvim";
+    #   recursive = true;
+    # };
     # ".emacs.d" = {
     #   source = "${dotfiles}/emacs/.emacs.d";
     #   recursive = true;

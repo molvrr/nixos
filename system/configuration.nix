@@ -73,24 +73,11 @@
     description = "mateus";
     shell = pkgs.nushell;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-      firefox
-      emacs
-      neovim
-      gnumake
-      git
-      fzf
-      xclip
-      ripgrep
-      alacritty
-      gcc
-      tmux
-    ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ pulseaudio ];
+  environment.systemPackages = with pkgs; [ pulseaudio git ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.package = pkgs.unstable.docker;
