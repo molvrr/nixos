@@ -78,4 +78,19 @@ in {
     configFile.source = "${dotfiles}/nushell/config.nu";
     envFile.source = "${dotfiles}/nushell/env.nu";
   };
+
+  programs.feh = {
+    enable = true;
+    buttons = {
+      zoom = null;
+      zoom_in = 4;
+      zoom_out = 5;
+      pan = 2;
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 }
