@@ -47,7 +47,7 @@
       terminal = "alacritty";
 
       window = {
-        hideEdgeBorders = "both";
+        # hideEdgeBorders = "both";
         titlebar = false;
       };
 
