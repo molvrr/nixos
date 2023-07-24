@@ -130,4 +130,8 @@
   };
 
   services.flatpak.enable = true;
+
+  nix.settings.trusted-substituters = [
+    "https://anmonteiro.nix-cache.workers.dev"
+  ];
 }

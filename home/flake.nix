@@ -10,10 +10,9 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-minecraft.url = "github:12Boti/nix-minecraft";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, nix-minecraft, ... }:
+  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, ... }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
