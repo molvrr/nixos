@@ -10,9 +10,10 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-unstable, nixpkgs-davinci, ... }:
+  outputs = { nur, home-manager, nixpkgs, nixpkgs-davinci, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
@@ -30,7 +31,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ overlay-unstable overlay-davinci ];
+        overlays = [ nur.overlay overlay-unstable overlay-davinci ];
       };
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
