@@ -92,4 +92,8 @@ in {
     enable = true;
     enableNushellIntegration = true;
   };
+
+  programs.lazygit = {
+    enable = true;
+  };
 }
