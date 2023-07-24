@@ -63,7 +63,8 @@
         "rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi";
       bars = [ ];
 
-      floating.criteria = [{ class = "mGBA"; }];
+      floating.criteria =
+        [ { window_role = "pop-up"; } { class = "mGBA"; } { class = "feh"; } ];
     };
   };
 }

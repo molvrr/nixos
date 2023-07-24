@@ -57,6 +57,7 @@ in {
     steam
     typst
     virt-manager
+    vivaldi
     weechat
     wineWowPackages.full
     xclip
