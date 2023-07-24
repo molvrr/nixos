@@ -42,6 +42,8 @@ in {
     krita
     libnotify
     lutris
+    maim
+    scrot
     mgba
     neovim
     nerdfonts
