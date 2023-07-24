@@ -38,6 +38,7 @@ in {
     gh
     gnumake
     godot_4
+    htmlq
     imagemagick
     krita
     libnotify
@@ -103,6 +104,11 @@ in {
   programs.qutebrowser = {
     enable = true;
     package = pkgs.qutebrowser-qt6;
+    keyBindings = {
+      normal = {
+        "<Ctrl-v>" = "spawn mpv {url}";
+      };
+    };
   };
 
   services.emacs.enable = true;
