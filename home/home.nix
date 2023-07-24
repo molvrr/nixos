@@ -44,6 +44,7 @@ in {
     lutris
     maim
     scrot
+    sd
     mgba
     neovim
     nerdfonts
@@ -98,4 +99,10 @@ in {
   programs.lazygit = {
     enable = true;
   };
+
+  programs.qutebrowser = {
+    enable = true;
+  };
+
+  services.emacs.enable = true;
 }
