@@ -3,8 +3,8 @@ let
   dotfiles = pkgs.fetchFromGitHub {
     owner = "molvrr";
     repo = "dotfiles";
-    rev = "5123b38086e0ed0df3b75d2520d44854e958b7bf";
-    hash = "sha256-zWJNM1rwiAMxyy5y0mFl8pWia5DGRW3xuziWyNHKi3s=";
+    rev = "417a613274666ce2c01ed36f20b7d56bfff87e63";
+    hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
 in {
   imports = [
