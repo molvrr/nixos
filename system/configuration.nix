@@ -134,4 +134,8 @@
   nix.settings.trusted-substituters = [
     "https://anmonteiro.nix-cache.workers.dev"
   ];
+
+  environment.sessionVariables = rec {
+    TZ = ":/etc/localtime";
+  };
 }
