@@ -102,6 +102,7 @@ in {
 
   programs.qutebrowser = {
     enable = true;
+    package = pkgs.qutebrowser-qt6;
   };
 
   services.emacs.enable = true;
