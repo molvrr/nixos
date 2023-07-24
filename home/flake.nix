@@ -30,14 +30,12 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ overlay-unstable overlay-davinci ];
       };
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ({ config, pkgs, ... }: {
-            nixpkgs.overlays = [ overlay-unstable overlay-davinci ];
-          })
           ./home.nix
         ];
       };

@@ -37,6 +37,7 @@ in {
     gcc
     gh
     gnumake
+    godot_4
     imagemagick
     krita
     libnotify
@@ -46,10 +47,8 @@ in {
     nerdfonts
     nixfmt
     nodejs_20
-    nyxt
     obs-studio
     osu-lazer
-    pinentry
     playerctl
     ripgrep
     rnix-lsp
@@ -61,7 +60,6 @@ in {
     weechat
     wineWowPackages.full
     xclip
-    xdg-desktop-portal-gtk
     yacreader
     youtube-dl
     zoom-us
