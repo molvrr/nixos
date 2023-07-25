@@ -117,6 +117,7 @@
   fileSystems = {
     "/mnt/Arquivos".device = "/dev/sda1";
     "/mnt/Jogos".device = "/dev/sdb1";
+    "/mnt/Externo".device = "/dev/sdc1";
   };
 
   hardware.opentabletdriver = {
