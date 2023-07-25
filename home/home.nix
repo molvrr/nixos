@@ -60,7 +60,6 @@ in {
     nerdfonts
     nixfmt
     nodejs_20
-    obs-studio # wlrobs
     playerctl
     ripgrep
     rnix-lsp
@@ -112,15 +111,15 @@ in {
   services.emacs.enable = true;
   services.mako.enable = true;
 
-  gtk = {
+  gtk = with pkgs; {
     enable = true;
     theme = {
       name = "Juno";
-      package = pkgs.juno-theme;
+      package = juno-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      package = papirus-icon-theme;
     };
 
     gtk3.extraConfig = {
@@ -135,5 +134,12 @@ in {
       '';
     };
 
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+    ];
   };
 }
