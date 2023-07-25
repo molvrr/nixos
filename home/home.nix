@@ -97,19 +97,35 @@ in {
     enableNushellIntegration = true;
   };
 
-  programs.lazygit = {
-    enable = true;
-  };
+  programs.lazygit = { enable = true; };
 
   programs.qutebrowser = {
     enable = true;
     package = pkgs.qutebrowser-qt6;
-    keyBindings = {
-      normal = {
-        "<Ctrl-v>" = "spawn mpv {url}";
-      };
-    };
+    keyBindings = { normal = { "<Ctrl-v>" = "spawn mpv {url}"; }; };
   };
 
   services.emacs.enable = true;
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    enableNvidiaPatches = true;
+    settings = {
+      decoration = {
+        shadow_offset = "0 5";
+        "col.shadow" = "rgba(00000099)";
+      };
+
+      "$mod" = "SUPER";
+
+      bindm = [
+        # mouse movements
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+        "$mod ALT, mouse:272, resizewindow"
+      ];
+    };
+
+  };
 }
