@@ -104,13 +104,8 @@
         autoStart = true;
         image = "pihole/pihole:2023.05.2";
         ports = [ "53:53/tcp" "53:53/udp" "80:80/tcp" ];
-        environment = {
-          TZ = "America/Sao_Paulo";
-        };
-        volumes = [ 
-          "etcPihole:/etc/pihole"
-          "etcDnsmasqD:/etc/dnsmasq.d"
-        ];
+        environment = { TZ = "America/Sao_Paulo"; };
+        volumes = [ "etcPihole:/etc/pihole" "etcDnsmasqD:/etc/dnsmasq.d" ];
       };
     };
   };
@@ -126,19 +121,21 @@
     daemon.enable = true;
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-  };
+  hardware.nvidia = { modesetting.enable = true; };
 
   programs.hyprland.enable = true;
 
-  nix.settings.trusted-substituters = [
-    "https://anmonteiro.nix-cache.workers.dev"
-  ];
+  nix.settings.trusted-substituters =
+    [ "https://anmonteiro.nix-cache.workers.dev" ];
 
   environment.sessionVariables = rec {
     TZ = ":/etc/localtime";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 }

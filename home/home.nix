@@ -51,7 +51,6 @@ in {
     wofi
     hyprpaper
     mpvpaper
-    xdg-desktop-portal-hyprland
 
     scrot
     sd

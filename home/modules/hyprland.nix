@@ -2,6 +2,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    xwayland.enable = true;
     settings = {
       monitor = ",preferred,auto,auto";
       exec-once = "waybar & firefox & hyprpaper";
@@ -44,8 +45,6 @@
         preserve_split = true;
       };
 
-      master = { new_is_master = true; };
-
       gestures = { workspace_swipe = false; };
 
       "device:epic-mouse-v1" = { sensitivity = -0.5; };
@@ -54,10 +53,10 @@
 
       bind = [
         "$mainMod, Return, exec, alacritty"
-        "$mainMod SHIFT, Q, killactive,"
+        "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, wofi --show drun"
+        "$mainMod, D, exec, wofi --show drun"
         "$mainMod, P, pseudo, # dwindle"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
@@ -65,6 +64,7 @@
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
+        "$mainMod, F, fullscreen, 0"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -75,6 +75,7 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+        "$mainMod, minus, togglespecialworkspace,"
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
         "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
         "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
@@ -85,12 +86,25 @@
         "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+        "$mainMod SHIFT, minus, movetoworkspacesilent, special"
       ];
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
+
+      windowrule = [
+        "float,title:^(Firefox — Sharing Indicator)$"
+      ];
     };
+  };
+
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    LIBVA_DRIVER_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
   };
 }
