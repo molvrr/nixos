@@ -29,18 +29,17 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
-  # services.xserver.windowManager.i3.enable = true;
-
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
   services.xserver.exportConfiguration = true;
   services.xserver = {
     layout = "us";
     xkbVariant = "alt-intl";
   };
 
-  # console.keyMap = "dvorak";
   console.useXkbConfig = true;
 
   services.printing.enable = true;
@@ -129,7 +128,7 @@
     modesetting.enable = true;
   };
 
-  services.flatpak.enable = true;
+  programs.hyprland.enable = true;
 
   nix.settings.trusted-substituters = [
     "https://anmonteiro.nix-cache.workers.dev"
@@ -137,5 +136,12 @@
 
   environment.sessionVariables = rec {
     TZ = ":/etc/localtime";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
