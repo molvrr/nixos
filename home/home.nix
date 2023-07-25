@@ -47,6 +47,8 @@ in {
 
     waybar
     wofi
+    hyprpaper
+    mpvpaper
 
     scrot
     sd
@@ -129,7 +131,7 @@ monitor=,preferred,auto,auto
 
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
-exec-once = waybar & firefox
+exec-once = waybar & firefox & hyprpaper
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -169,7 +171,7 @@ general {
 decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    rounding = 10
+    rounding = 5
     blur = true
     blur_size = 3
     blur_passes = 1
@@ -182,7 +184,7 @@ decoration {
 }
 
 animations {
-    enabled = true
+    enabled = false
 
     # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
@@ -235,7 +237,8 @@ bind = $mainMod, M, exit,
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, wofi --show drun
 bind = $mainMod, P, pseudo, # dwindle
-# bind = $mainMod, J, togglesplit, # dwindle
+bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, H, movefocus, l
