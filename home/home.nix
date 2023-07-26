@@ -47,12 +47,15 @@ in {
     maim
     spotify-tui
 
+    wev
     waybar
     eww-wayland
     wofi
     hyprpaper
     mpvpaper
     wl-clipboard
+    grim
+    slurp
 
     scrot
     sd

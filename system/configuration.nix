@@ -123,7 +123,10 @@
 
   hardware.nvidia = { modesetting.enable = true; };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+  };
 
   nix.settings.trusted-substituters =
     [ "https://anmonteiro.nix-cache.workers.dev" ];

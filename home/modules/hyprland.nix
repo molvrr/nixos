@@ -3,6 +3,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    enableNvidiaPatches = true;
     settings = {
       monitor = ",preferred,auto,auto";
       exec-once = "waybar & firefox & hyprpaper";
@@ -87,6 +88,7 @@
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
+        ", Print, exec, grim -g \"\$(slurp)\" - | wl-copy"
       ];
 
       bindm = [
