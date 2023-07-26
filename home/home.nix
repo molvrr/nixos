@@ -77,6 +77,12 @@ in {
   };
 
   programs.nushell = { enable = true; };
+  programs.nushell = {
+    shellAliases = {
+      lg = "lazygit";
+    };
+    enable = true;
+  };
 
   programs.feh = {
     enable = true;
