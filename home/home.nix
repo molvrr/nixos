@@ -52,6 +52,7 @@ in {
     wofi
     hyprpaper
     mpvpaper
+    wl-clipboard
 
     scrot
     sd
