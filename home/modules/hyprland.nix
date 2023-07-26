@@ -128,6 +128,11 @@
     };
   };
 
+  services.mako = {
+    enable = true;
+    defaultTimeout = 1500;
+  };
+
   home.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";

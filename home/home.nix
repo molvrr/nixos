@@ -113,10 +113,6 @@ in {
   };
 
   services.emacs.enable = true;
-  services.mako = {
-    enable = true;
-    defaultTimeout = 1500;
-  };
 
   gtk = with pkgs; {
     enable = true;
