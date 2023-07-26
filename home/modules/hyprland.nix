@@ -1,5 +1,17 @@
 { config, pkgs, ... }: {
 
+  home.packages = with pkgs; [
+    wev
+    waybar
+    eww-wayland
+    wofi
+    hyprpaper
+    mpvpaper
+    wl-clipboard
+    grim
+    slurp
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -88,7 +100,7 @@
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
-        ", Print, exec, grim -g \"\$(slurp)\" - | wl-copy"
+        '', Print, exec, grim -g "$(slurp)" - | wl-copy''
       ];
 
       bindm = [
@@ -96,9 +108,7 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      windowrule = [
-        "float,title:^(Firefox — Sharing Indicator)$"
-      ];
+      windowrule = [ "float,title:^(Firefox — Sharing Indicator)$" ];
     };
   };
 

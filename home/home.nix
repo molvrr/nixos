@@ -45,20 +45,6 @@ in {
     libnotify
     lutris
     maim
-    spotify-tui
-
-    wev
-    waybar
-    eww-wayland
-    wofi
-    hyprpaper
-    mpvpaper
-    wl-clipboard
-    grim
-    slurp
-
-    scrot
-    sd
     mgba
     neovim
     nerdfonts
@@ -68,11 +54,14 @@ in {
     ripgrep
     rnix-lsp
     ruby
+    scrot
+    sd
     spotify
     steam
     typst
     virt-manager
     vivaldi
+    webcord
     weechat
     wineWowPackages.full
     xclip
@@ -142,8 +131,6 @@ in {
 
   programs.obs-studio = {
     enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-    ];
+    plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
   };
 }
