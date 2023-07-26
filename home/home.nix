@@ -27,6 +27,7 @@ in {
     bitwarden
     blender
     calibre
+    coreutils # stdbuf - eww (hypr)
     davinci.davinci-resolve
     direnv
     discord
@@ -35,12 +36,14 @@ in {
     ffmpeg
     firefox
     fzf
+    gawk
     gcc
     gh
     gnumake
     godot_4
     htmlq
     imagemagick
+    jq
     krita
     libnotify
     lutris
@@ -56,8 +59,11 @@ in {
     ruby
     scrot
     sd
+    socat
     spotify
     steam
+    steam-tui
+    steamcmd
     typst
     virt-manager
     vivaldi
