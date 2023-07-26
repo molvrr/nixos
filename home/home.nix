@@ -44,9 +44,8 @@ in {
     libnotify
     lutris
     maim
-    scrot
-    sd
     mgba
+    mitmproxy
     neovim
     nerdfonts
     nixfmt
@@ -54,9 +53,12 @@ in {
     obs-studio
     osu-lazer
     playerctl
+    pulsemixer
     ripgrep
     rnix-lsp
     ruby
+    scrot
+    sd
     spotify
     steam
     typst
