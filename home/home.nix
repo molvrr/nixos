@@ -82,7 +82,6 @@ in {
     enableNushellIntegration = true;
   };
 
-  programs.nushell = { enable = true; };
   programs.nushell = {
     shellAliases = {
       lg = "lazygit";
