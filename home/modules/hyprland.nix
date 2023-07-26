@@ -34,7 +34,7 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgba(f81188c2) rgba(ff0038c2) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
         layout = "dwindle";
       };
@@ -51,7 +51,19 @@
         "col.shadow" = "rgba(1a1a1aee)";
       };
 
-      animations = { enabled = false; };
+      animations = {
+        enabled = true;
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "windowsMove, 0, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 0, 6, default"
+        ];
+      };
 
       dwindle = {
         pseudotile = true;
@@ -106,6 +118,10 @@
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
+      ];
+
+      env = [
+        "XCURSOR_SIZE, 32"
       ];
 
       windowrule = [ "float,title:^(Firefox — Sharing Indicator)$" ];
