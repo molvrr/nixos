@@ -31,8 +31,8 @@
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 10;
+        gaps_in = 10;
+        gaps_out = 20;
         border_size = 2;
         "col.active_border" = "rgba(f81188c2) rgba(ff0038c2) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -89,6 +89,14 @@
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
+        "$mainMod SHIFT, H, movewindow, l"
+        "$mainMod SHIFT, L, movewindow, r"
+        "$mainMod SHIFT, K, movewindow, u"
+        "$mainMod SHIFT, J, movewindow, d"
+        "$mainMod, H, changegroupactive, b"
+        "$mainMod, L, changegroupactive, f"
+        "$mainMod, I, pin,"
+        "$mainMod, W, togglegroup,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
