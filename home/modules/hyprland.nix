@@ -16,11 +16,11 @@
     enable = true;
     xwayland.enable = true;
     settings = {
-      monitor = ",1920x1080,auto,1";
-      exec-once = "waybar & firefox & hyprpaper";
+      monitor = [ "eDP-1,1920x1080,auto,1" "HDMI-A-1,2560x1080,auto,1" ];
+      exec-once = "mattermost-desktop & firefox & hyprpaper";
       input = {
-        kb_layout = "br";
-        kb_variant = "abnt2";
+        kb_layout = "br,us";
+        kb_variant = "abnt2,intl";
         kb_model = "";
         kb_options = "";
         kb_rules = "";
@@ -30,8 +30,8 @@
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 10;
+        gaps_in = 10;
+        gaps_out = 20;
         border_size = 2;
         "col.active_border" = "rgba(f81188c2) rgba(ff0038c2) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -85,6 +85,8 @@
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
         "$mainMod, H, movefocus, l"
+        "$mainMod, H, changegroupactive, b"
+        "$mainMod, L, changegroupactive, f"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
@@ -111,6 +113,12 @@
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
         "$mainMod SHIFT, minus, movetoworkspacesilent, special"
+        "$mainMod SHIFT, H, movewindow, l"
+        "$mainMod SHIFT, L, movewindow, r"
+        "$mainMod SHIFT, J, movewindow, d"
+        "$mainMod SHIFT, K, movewindow, u"
+        "$mainMod, I, pin,"
+        "$mainMod, W, togglegroup,"
         '', Print, exec, grim -g "$(slurp)" - | wl-copy''
       ];
 
@@ -119,11 +127,17 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      env = [
-        "XCURSOR_SIZE, 32"
+      env = [ "XCURSOR_SIZE, 32" ];
+
+      windowrule = [
+        "float,title:^(Firefox — Sharing Indicator)$"
+        "float,title:^(Bitwarden)$"
       ];
 
-      windowrule = [ "float,title:^(Firefox — Sharing Indicator)$" ];
+      "device:keychron-k3" = {
+        kb_layout = "us";
+        kb_variant = "intl";
+      };
     };
   };
 
