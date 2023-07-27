@@ -28,7 +28,6 @@ in {
     blender
     calibre
     coreutils # stdbuf - eww (hypr)
-    davinci.davinci-resolve
     direnv
     discord
     emacs
@@ -48,6 +47,7 @@ in {
     libnotify
     lutris
     maim
+    mattermost-desktop
     mgba
     neovim
     nerdfonts
@@ -57,6 +57,8 @@ in {
     ripgrep
     rnix-lsp
     ruby
+    spotify
+    slack
     scrot
     sd
     socat
