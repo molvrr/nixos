@@ -143,6 +143,13 @@ in {
 
   };
 
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
+    preload = ~/backgroundImage.jpg
+    preload = ~/backgroundImage2.jpg
+    wallpaper = eDP-1, ~/backgroundImage.jpg
+    wallpaper = HDMI-A-1,contain:~/backgroundImage2.jpg
+  '';
+
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
