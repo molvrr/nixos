@@ -7,6 +7,7 @@
     mouse = true;
     escapeTime = 0;
     historyLimit = 100000;
+    newSession = true;
     baseIndex = 1;
     disableConfirmationPrompt = true;
     plugins = with pkgs; [
