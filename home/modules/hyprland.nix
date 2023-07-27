@@ -15,13 +15,12 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = ",1920x1080,auto,1";
       exec-once = "waybar & firefox & hyprpaper";
       input = {
-        kb_layout = "us";
-        kb_variant = "intl";
+        kb_layout = "br";
+        kb_variant = "abnt2";
         kb_model = "";
         kb_options = "";
         kb_rules = "";

@@ -8,6 +8,9 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "kvm-intel" ];
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   networking.hostName = "nixos";
 
   networking.networkmanager.enable = true;
@@ -29,15 +32,21 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
+  services.xserver.resolutions = [
+    {
+      x = 1920;
+      y = 1080;
+    }
+  ];
+
   services.xserver.exportConfiguration = true;
   services.xserver = {
-    layout = "us";
-    xkbVariant = "alt-intl";
+    layout = "br";
+    xkbVariant = "abnt2";
   };
 
   console.useXkbConfig = true;
@@ -47,8 +56,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
     automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 15d";
+    dates = "weekly"; options = "--delete-older-than 15d";
   };
 
   sound.enable = true;
@@ -83,10 +91,10 @@
   virtualisation.docker.package = pkgs.unstable.docker;
   virtualisation.libvirtd.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  #programs.neovim = {
+  #  enable = true;
+  #  defaultEditor = true;
+  #};
   system.stateVersion = "23.05";
 
   services.udev = {
@@ -110,18 +118,18 @@
     };
   };
 
-  fileSystems = {
-    "/mnt/Arquivos".device = "/dev/sda1";
-    "/mnt/Jogos".device = "/dev/sdb1";
-    "/mnt/Externo".device = "/dev/sdc1";
-  };
+  #fileSystems = {
+  #  "/mnt/Arquivos".device = "/dev/sda1";
+  #  "/mnt/Jogos".device = "/dev/sdb1";
+  #  "/mnt/Externo".device = "/dev/sdc1";
+  #};
 
   hardware.opentabletdriver = {
     enable = true;
     daemon.enable = true;
   };
 
-  hardware.nvidia = { modesetting.enable = true; };
+  #hardware.nvidia = { modesetting.enable = true; };
 
   nix.settings.trusted-substituters =
     [ "https://anmonteiro.nix-cache.workers.dev" ];
