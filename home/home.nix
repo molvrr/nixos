@@ -143,4 +143,10 @@ in {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
   };
+
+  programs.git = {
+    enable = true;
+    userEmail = "mateuscolvr@gmail.com";
+    userName = "Mateus Cruz";
+  };
 }
