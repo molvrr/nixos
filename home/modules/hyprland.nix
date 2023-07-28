@@ -128,11 +128,12 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      env = [
-        "XCURSOR_SIZE, 32"
-      ];
+      env = [ "XCURSOR_SIZE, 32" ];
 
-      windowrule = [ "float,title:^(Firefox — Sharing Indicator)$" ];
+      windowrule = [
+        "float,title:^(Firefox — Sharing Indicator)$"
+        "float,title:^(Bitwarden)$"
+      ];
     };
   };
 
