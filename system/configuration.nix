@@ -72,7 +72,7 @@
     isNormalUser = true;
     description = "mateus";
     shell = pkgs.nushell;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -137,6 +137,4 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-hyprland ];
   };
-
-  services.cron.enable = true;
 }
