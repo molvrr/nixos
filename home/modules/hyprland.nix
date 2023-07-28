@@ -68,11 +68,10 @@
       dwindle = {
         pseudotile = true;
         preserve_split = true;
+        force_split = 2;
       };
 
       gestures = { workspace_swipe = false; };
-
-      "device:epic-mouse-v1" = { sensitivity = -0.5; };
 
       "$mainMod" = "SUPER";
 
