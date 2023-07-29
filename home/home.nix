@@ -33,7 +33,7 @@ in {
     emacs
     fd
     ffmpeg
-    firefox
+    firefox-wayland
     fzf
     gawk
     gcc
@@ -161,5 +161,9 @@ in {
     enable = true;
     userEmail = "mateuscolvr@gmail.com";
     userName = "Mateus Cruz";
+  };
+
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
   };
 }
