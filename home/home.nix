@@ -38,6 +38,7 @@ in {
     gawk
     gcc
     gh
+    gnome.nautilus
     gnumake
     godot_4
     htmlq
@@ -48,6 +49,7 @@ in {
     lutris
     maim
     mattermost-desktop
+    mitmproxy
     mgba
     neovim
     nerdfonts
@@ -85,6 +87,13 @@ in {
   };
 
   programs.nushell = {
+    configFile.text = ''
+      $env.config = {
+        cursor_shape: {
+          emacs: block
+        }
+      }
+    '';
     shellAliases = {
       lg = "lazygit";
     };

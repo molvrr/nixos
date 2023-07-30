@@ -149,4 +149,8 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-hyprland ];
   };
+
+  security.pki.certificateFiles = [
+    ./mitmproxy-ca-cert.pem
+  ];
 }

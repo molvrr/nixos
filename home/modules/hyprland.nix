@@ -119,6 +119,7 @@
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod, I, pin,"
         "$mainMod, W, togglegroup,"
+        "$mainMod, code:47, exec, notify-send $SHELL"
         '', Print, exec, grim -g "$(slurp)" - | wl-copy''
       ];
 
@@ -135,8 +136,10 @@
       ];
 
       "device:keychron-k3" = {
-        kb_layout = "us";
-        kb_variant = "intl";
+        kb_layout = "us,br";
+        kb_variant = "intl,abnt2";
+        kb_model = "";
+        kb_options = "grp:alt_shift_toggle";
       };
     };
   };
