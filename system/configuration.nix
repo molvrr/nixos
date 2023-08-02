@@ -42,23 +42,23 @@
   #};
 
   services.xserver.displayManager.lightdm.enable = true;
-
   services.xserver.desktopManager.pantheon.enable = true;
-  services.xserver.resolutions = [
-{
-      x = 2560;
-      y = 1080;
-    }
-    {
-      x = 1920;
-      y = 1080;
-    }
-  ];
+
+#   services.xserver.resolutions = [
+# {
+#       x = 2560;
+#       y = 1080;
+#     }
+#     {
+#       x = 1920;
+#       y = 1080;
+#     }
+#   ];
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
-    layout = "br";
-    xkbVariant = "abnt2";
+    layout = "us";
+    xkbVariant = "intl";
   };
 
   console.useXkbConfig = true;
@@ -68,7 +68,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
     automatic = true;
-    dates = "weekly"; options = "--delete-older-than 15d";
+    dates = "weekly";
+    options = "--delete-older-than 15d";
   };
 
   sound.enable = true;
@@ -102,10 +103,6 @@
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
 
-  #programs.neovim = {
-  #  enable = true;
-  #  defaultEditor = true;
-  #};
   system.stateVersion = "23.05";
 
   services.udev = {
@@ -129,18 +126,10 @@
     };
   };
 
-  #fileSystems = {
-  #  "/mnt/Arquivos".device = "/dev/sda1";
-  #  "/mnt/Jogos".device = "/dev/sdb1";
-  #  "/mnt/Externo".device = "/dev/sdc1";
-  #};
-
   hardware.opentabletdriver = {
     enable = true;
     daemon.enable = true;
   };
-
-  #hardware.nvidia = { modesetting.enable = true; };
 
   nix.settings.trusted-substituters =
     [ "https://anmonteiro.nix-cache.workers.dev" ];
