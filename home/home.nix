@@ -25,8 +25,10 @@ in {
     alejandra
     aria2
     bitwarden
+    typst-lsp
     blender
     calibre
+    chez
     coreutils # stdbuf - eww (hypr)
     direnv
     discord
@@ -38,9 +40,11 @@ in {
     gawk
     gcc
     gh
+    ghc
     gnome.nautilus
     gnumake
     godot_4
+    haskell-language-server
     htmlq
     imagemagick
     jq
@@ -49,21 +53,21 @@ in {
     lutris
     maim
     mattermost-desktop
-    mitmproxy
     mgba
+    mitmproxy
     neovim
     nerdfonts
     nixfmt
-    nyxt
     nodejs_20
+    nyxt
+    obsidian
     playerctl
     ripgrep
     rnix-lsp
     ruby
-    spotify
-    slack
     scrot
     sd
+    slack
     socat
     spotify
     steam
@@ -75,6 +79,7 @@ in {
     webcord
     weechat
     wineWowPackages.full
+    wrk
     xclip
     yacreader
     youtube-dl
@@ -130,30 +135,30 @@ in {
     defaultTimeout = 1500;
   };
 
-  gtk = with pkgs; {
-    enable = true;
-    theme = {
-      name = "Juno";
-      package = juno-theme;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = papirus-icon-theme;
-    };
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-  };
+  # gtk = with pkgs; {
+  #   enable = true;
+  #   theme = {
+  #     name = "Juno";
+  #     package = juno-theme;
+  #   };
+  #   iconTheme = {
+  #     name = "Papirus-Dark";
+  #     package = papirus-icon-theme;
+  #   };
+  #
+  #   gtk3.extraConfig = {
+  #     Settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  #
+  #   gtk4.extraConfig = {
+  #     Settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  #
+  # };
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ~/backgroundImage.jpg
@@ -176,4 +181,25 @@ in {
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 1;
   };
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      nvarner.typst-lsp
+      jdinhlife.gruvbox
+      bbenoist.nix
+      kamadorueda.alejandra
+      brettm12345.nixfmt-vscode
+      jnoortheen.nix-ide
+      usernamehw.errorlens
+      tomoki1207.pdf
+      haskell.haskell
+      justusadam.language-haskell
+    ];
+  };
+
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
 }
