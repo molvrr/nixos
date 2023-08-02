@@ -129,7 +129,7 @@ in {
     keyBindings = { normal = { "<Ctrl-v>" = "spawn mpv {url}"; }; };
   };
 
-  services.emacs.enable = true;
+  #services.emacs.enable = true;
   services.mako = {
     enable = true;
     defaultTimeout = 1500;

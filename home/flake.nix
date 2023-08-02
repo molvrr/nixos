@@ -10,9 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
-  outputs = { nur, home-manager, nixpkgs, nixpkgs-davinci, ... }:
+  outputs = { nur, neovim-nightly-overlay, home-manager, nixpkgs, nixpkgs-davinci, nix-doom-emacs, ... }:
     let
       system = "x86_64-linux";
       overlay-davinci = final: prev: {
@@ -24,12 +26,13 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ nur.overlay overlay-davinci ];
+        overlays = [ nur.overlay overlay-davinci neovim-nightly-overlay.overlay ];
       };
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
+          nix-doom-emacs.hmModule
           ./home.nix
         ];
       };
