@@ -29,6 +29,10 @@ in {
     blender
     calibre
     chez
+
+    cmake
+    libtool
+
     coreutils # stdbuf - eww (hypr)
     direnv
     discord
