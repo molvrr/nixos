@@ -27,6 +27,7 @@ in {
     bitwarden
     typst-lsp
     blender
+    bottom
     calibre
     chez
 
