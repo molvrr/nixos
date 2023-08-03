@@ -70,6 +70,7 @@ in {
     ripgrep
     rnix-lsp
     ruby
+    sbcl
     scrot
     sd
     slack
