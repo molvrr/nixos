@@ -11,7 +11,7 @@ in {
     # ./modules/dunst.nix
     # ./modules/i3.nix
     # ./modules/minecraft.nix
-    # ./modules/hyprland.nix
+    ./modules/hyprland.nix
     ./modules/mpv.nix
     ./modules/tmux.nix
   ];

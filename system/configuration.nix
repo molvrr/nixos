@@ -36,24 +36,14 @@
   };
 
   services.xserver.enable = true;
-  #services.xserver.displayManager.gdm = {
-  #  enable = true;
-  #  wayland = true;
-  #};
+  services.xserver.displayManager.gdm = {
+   enable = true;
+   wayland = true;
+  };
 
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = true;
 
-#   services.xserver.resolutions = [
-# {
-#       x = 2560;
-#       y = 1080;
-#     }
-#     {
-#       x = 1920;
-#       y = 1080;
-#     }
-#   ];
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
