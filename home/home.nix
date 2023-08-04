@@ -37,7 +37,7 @@ in {
     coreutils # stdbuf - eww (hypr)
     direnv
     discord
-    emacs
+    emacs-unstable
     fd
     ffmpeg
     firefox-wayland
