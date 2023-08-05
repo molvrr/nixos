@@ -17,10 +17,10 @@
     xwayland.enable = true;
     settings = {
       monitor = [ "eDP-1,1920x1080,auto,1" "HDMI-A-1,2560x1080,auto,1" ];
-      exec-once = "fcitx5 & mattermost-desktop & firefox & hyprpaper";
+      exec-once = "firefox & hyprpaper";
       input = {
-        kb_layout = "br,us";
-        kb_variant = "abnt2,intl";
+        kb_layout = "us";
+        kb_variant = "intl";
         kb_model = "";
         kb_options = "";
         kb_rules = "";
