@@ -139,8 +139,9 @@
         kb_layout = "us,br";
         kb_variant = "intl,abnt2";
         kb_model = "";
+        kb_options = "";
         #kb_options = "grp:alt_shift_toggle";
-        kb_options = "grp:caps_toggle";
+        #kb_options = "grp:caps_toggle";
       };
     };
   };
