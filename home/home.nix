@@ -48,6 +48,8 @@ in {
     ghc
     gnome.nautilus
     gnumake
+    go
+    gopls
     godot_4
     haskell-language-server
     htmlq
