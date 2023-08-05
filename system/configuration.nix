@@ -12,7 +12,8 @@
   services.blueman.enable = true;
 
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking.wireless.enable = true;
+  #networking.networkmanager.enable = true;
   networking.nameservers = [
     "127.0.0.1"
     "8.8.8.8"
