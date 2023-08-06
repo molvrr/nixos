@@ -51,7 +51,7 @@
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
           "windows, 1, 7, myBezier"
@@ -80,7 +80,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
-        "$mainMod, D, exec, wofi --show drun"
+        "$mainMod, D, exec, wofi -a --show drun"
         "$mainMod, P, pseudo, # dwindle"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
@@ -139,7 +139,7 @@
         kb_layout = "us,br";
         kb_variant = "intl,abnt2";
         kb_model = "";
-        kb_options = "";
+        kb_options = "compose:ralt";
         #kb_options = "grp:alt_shift_toggle";
         #kb_options = "grp:caps_toggle";
       };

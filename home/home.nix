@@ -7,18 +7,18 @@ let
     hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
 
-  kmonada-bin = pkgs.fetchurl {
-    url =
-      "https://github.com/david-janssen/kmonad/releases/download/0.4.1/kmonad-0.4.1-linux";
-    hash = "sha256-g55Y58wj1t0GhG80PAyb4PknaYGJ5JfaNe9RlnA/eo8=";
-  };
-
-  kmonada = pkgs.runCommand "kmonad" { } ''
-    #!${pkgs.stdenv.shell}
-    mkdir -p $out/bin
-    cp ${kmonada-bin} $out/bin/kmonad
-    chmod +x $out/bin/*
-  '';
+  # kmonada-bin = pkgs.fetchurl {
+  #   url =
+  #     "https://github.com/david-janssen/kmonad/releases/download/0.4.1/kmonad-0.4.1-linux";
+  #   hash = "sha256-g55Y58wj1t0GhG80PAyb4PknaYGJ5JfaNe9RlnA/eo8=";
+  # };
+  #
+  # kmonada = pkgs.runCommand "kmonad" { } ''
+  #   #!${pkgs.stdenv.shell}
+  #   mkdir -p $out/bin
+  #   cp ${kmonada-bin} $out/bin/kmonad
+  #   chmod +x $out/bin/*
+  # '';
 in {
   imports = [
     # ./modules/dunst.nix
@@ -65,7 +65,7 @@ in {
     gopls
     godot_4
     haskell-language-server
-    kmonada
+    kmonad
     htmlq
     imagemagick
     jq

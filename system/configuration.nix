@@ -13,7 +13,8 @@
 
   networking.hostName = "nixos";
   networking.wireless.enable = true;
-  #networking.networkmanager.enable = true;
+  # networking.wireless.userControlled.enable = true;
+  # networking.networkmanager.enable = true;
   networking.nameservers = [
     "127.0.0.1"
     "8.8.8.8"
@@ -37,14 +38,9 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm = {
-   enable = true;
-   wayland = true;
-  };
 
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.pantheon.enable = true;
-
 
   services.xserver.exportConfiguration = true;
   services.xserver = {

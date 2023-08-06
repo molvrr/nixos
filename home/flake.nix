@@ -12,9 +12,15 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+
+    kmonad = {
+      url = "github:kmonad/kmonad?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, emacs-overlay, nur, neovim-nightly-overlay, home-manager, nixpkgs, nixpkgs-davinci, ... }:
+  outputs = { self, kmonad, emacs-overlay, nur, neovim-nightly-overlay
+    , home-manager, nixpkgs, nixpkgs-davinci, ... }:
     let
       system = "x86_64-linux";
       overlay-davinci = final: prev: {
@@ -23,17 +29,22 @@
           config.allowUnfree = true;
         };
       };
+
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ nur.overlay overlay-davinci neovim-nightly-overlay.overlay emacs-overlay.overlays.emacs ];
+        overlays = [
+          kmonad.overlays.default
+          nur.overlay
+          overlay-davinci
+          neovim-nightly-overlay.overlay
+          emacs-overlay.overlays.emacs
+        ];
       };
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [
-          ./home.nix
-        ];
+        modules = [ ./home.nix ];
       };
     };
 }
