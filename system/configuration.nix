@@ -12,7 +12,8 @@
   services.blueman.enable = true;
 
   networking.hostName = "nixos";
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
+  networking.wireless.iwd.enable = true;
   # networking.wireless.userControlled.enable = true;
   # networking.networkmanager.enable = true;
   networking.nameservers = [
