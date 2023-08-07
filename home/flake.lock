@@ -198,15 +198,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1690208251,
-        "narHash": "sha256-eb/KANeuQADVl5j4wVid4jyPCOMTorSI2+gqoXp3LME=",
+        "lastModified": 1687871164,
+        "narHash": "sha256-bBFlPthuYX322xOlpJvkjUBz0C+MOBjZdDOOJJ+G2jU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d309a62ee81faec56dd31a263a0184b0e3227e36",
+        "rev": "07c347bb50994691d7b0095f45ebd8838cf6bc38",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "release-23.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -295,22 +296,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-davinci": {
-      "locked": {
-        "lastModified": 1689041627,
-        "narHash": "sha256-s6ynlk52rbpZV0zwCi9PYejOjaQLd2QdUiUBtml1LIc=",
-        "owner": "jshcmpbll",
-        "repo": "nixpkgs",
-        "rev": "391eaa6e7106c0e91e77073a1496b8548b68438b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jshcmpbll",
-        "repo": "nixpkgs",
-        "rev": "391eaa6e7106c0e91e77073a1496b8548b68438b",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "dir": "lib",
@@ -379,16 +364,16 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1691368598,
-        "narHash": "sha256-ia7li22keBBbj02tEdqjVeLtc7ZlSBuhUk+7XTUFr14=",
+        "lastModified": 1691328192,
+        "narHash": "sha256-w59N1zyDQ7SupfMJLFvtms/SIVbdryqlw5AS4+DiH+Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5a8e9243812ba528000995b294292d3b5e120947",
+        "rev": "61676e4dcfeeb058f255294bcb08ea7f3bc3ce56",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "ref": "nixos-unstable",
+        "ref": "nixos-23.05",
         "type": "indirect"
       }
     },
@@ -414,7 +399,6 @@
         "kmonad": "kmonad",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-davinci": "nixpkgs-davinci",
         "nur": "nur"
       }
     },

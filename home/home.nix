@@ -11,7 +11,7 @@ in {
     # ./modules/dunst.nix
     # ./modules/i3.nix
     # ./modules/minecraft.nix
-    ./modules/hyprland.nix
+    # ./modules/hyprland.nix
     ./modules/mpv.nix
     ./modules/tmux.nix
   ];
@@ -55,6 +55,13 @@ in {
     haskell-language-server
     kmonad
     htmlq
+
+    hyprpaper
+    wl-clipboard
+    wofi
+    grim
+    slurp
+
     imagemagick
     jq
     krita
@@ -193,7 +200,7 @@ in {
     userName = "Mateus Cruz";
   };
 
-  home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; };
+  home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; GTK_IM_MODULE = "xim"; };
 
   programs.vscode = {
     enable = true;
@@ -213,6 +220,6 @@ in {
     ];
   };
 
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
+  # i18n.inputMethod.enabled = "fcitx5";
+  # i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
 }
