@@ -86,6 +86,7 @@ in {
     nodePackages.typescript-language-server
     nyxt
     obsidian
+    pciutils
     playerctl
     ripgrep
     rnix-lsp
