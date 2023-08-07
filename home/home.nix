@@ -6,19 +6,6 @@ let
     rev = "417a613274666ce2c01ed36f20b7d56bfff87e63";
     hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
-
-  # kmonada-bin = pkgs.fetchurl {
-  #   url =
-  #     "https://github.com/david-janssen/kmonad/releases/download/0.4.1/kmonad-0.4.1-linux";
-  #   hash = "sha256-g55Y58wj1t0GhG80PAyb4PknaYGJ5JfaNe9RlnA/eo8=";
-  # };
-  #
-  # kmonada = pkgs.runCommand "kmonad" { } ''
-  #   #!${pkgs.stdenv.shell}
-  #   mkdir -p $out/bin
-  #   cp ${kmonada-bin} $out/bin/kmonad
-  #   chmod +x $out/bin/*
-  # '';
 in {
   imports = [
     # ./modules/dunst.nix
@@ -159,17 +146,21 @@ in {
     defaultTimeout = 1500;
   };
 
-  # gtk = with pkgs; {
+  # gtk = with pkgs;
+  # # let
+  # #   themes = pkgs.callPackage ./themes.nix {};
+  # # in
+  # {
   #   enable = true;
   #   theme = {
   #     name = "Juno";
   #     package = juno-theme;
   #   };
-  #   iconTheme = {
-  #     name = "Papirus-Dark";
-  #     package = papirus-icon-theme;
-  #   };
-  #
+  #   # iconTheme = {
+  #   #   name = "Papirus-Dark";
+  #   #   package = papirus-icon-theme;
+  #   # };
+  #   #
   #   gtk3.extraConfig = {
   #     Settings = ''
   #       gtk-application-prefer-dark-theme=1
