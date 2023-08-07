@@ -53,6 +53,7 @@ in {
     emacs-unstable
     fd
     ffmpeg
+    file
     firefox-wayland
     fzf
     gawk

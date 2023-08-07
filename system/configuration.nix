@@ -80,6 +80,8 @@
 
   users.groups.uinput = {};
 
+  services.atd.enable = true;
+
   users.users.mateus = {
     isNormalUser = true;
     description = "mateus";
