@@ -101,6 +101,7 @@ in {
     weechat
     wineWowPackages.full
     wrk
+    unzip
     xclip
     yacreader
     youtube-dl
