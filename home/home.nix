@@ -6,6 +6,8 @@ let
     rev = "417a613274666ce2c01ed36f20b7d56bfff87e63";
     hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
+
+  heavypaint = pkgs.callPackage ./heavypaint.nix {};
 in {
   imports = [
     # ./modules/dunst.nix
@@ -33,6 +35,8 @@ in {
 
     cmake
     libtool
+
+    heavypaint
 
     coreutils # stdbuf - eww (hypr)
     direnv
