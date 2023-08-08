@@ -14,9 +14,10 @@
 
   networking.hostName = "nixos";
   # networking.wireless.enable = true;
-  networking.wireless.iwd.enable = true;
+  # networking.wireless.iwd.enable = true;
   # networking.wireless.userControlled.enable = true;
-  # networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
   networking.nameservers = [
     "127.0.0.1"
     "8.8.8.8"
