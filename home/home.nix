@@ -77,8 +77,6 @@ in {
     mitmproxy
     neovim
     nerdfonts
-    nim
-    nimlsp
     nixfmt
     nodejs_20
     nodePackages.typescript-language-server
