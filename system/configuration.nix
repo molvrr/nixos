@@ -130,7 +130,7 @@
     [ "https://anmonteiro.nix-cache.workers.dev" ];
 
   environment.sessionVariables = rec {
-    TZ = ":/etc/localtime";
+    TZ = "${config.time.timeZone}";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
     GTK_USE_PORTAL = "1";

@@ -96,7 +96,7 @@ in {
     steamcmd
     typst
     virt-manager
-    vivaldi
+    (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     webcord
     weechat
     wineWowPackages.full
