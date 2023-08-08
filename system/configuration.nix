@@ -6,16 +6,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
   networking.hostName = "nixos";
-  # networking.wireless.enable = true;
-  # networking.wireless.iwd.enable = true;
-  # networking.wireless.userControlled.enable = true;
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
   networking.nameservers = [
@@ -42,8 +38,8 @@
 
   services.xserver.enable = true;
 
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.pantheon.enable = true;
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
@@ -146,5 +142,5 @@
     ./mitmproxy-ca-cert.pem
   ];
 
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 }
