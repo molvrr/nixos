@@ -108,6 +108,8 @@ in {
     yacreader
     youtube-dl
     zoom-us
+
+    logseq
   ];
 
   programs.starship = {
