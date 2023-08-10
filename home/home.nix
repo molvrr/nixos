@@ -75,7 +75,7 @@ in {
     mattermost-desktop
     mgba
     mitmproxy
-    neovim
+    neovim-nightly
     nerdfonts
     nixfmt
     nodejs_20
