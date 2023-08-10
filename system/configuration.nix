@@ -7,7 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelPackages = pkgs.linuxPackages_5_4;
+  boot.kernelPackages = pkgs.linuxPackages_5_10;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -39,8 +39,8 @@
 
   services.xserver.enable = true;
 
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.pantheon.enable = true;
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
@@ -143,5 +143,5 @@
     ./mitmproxy-ca-cert.pem
   ];
 
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 }
