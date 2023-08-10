@@ -38,8 +38,8 @@
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = true;
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
@@ -142,5 +142,5 @@
     ./mitmproxy-ca-cert.pem
   ];
 
-  # programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 }

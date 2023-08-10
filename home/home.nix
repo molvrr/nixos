@@ -109,7 +109,7 @@ in {
     youtube-dl
     zoom-us
 
-    logseq
+    unstable.logseq
   ];
 
   programs.starship = {

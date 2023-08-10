@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.05";
+    nixpkgs-unstable.url = "nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,9 +20,13 @@
   };
 
   outputs = { self, kmonad, emacs-overlay, nur, neovim-nightly-overlay
-    , home-manager, nixpkgs, ... }:
+    , nixpkgs-unstable, home-manager, nixpkgs, ... }:
     let
       system = "x86_64-linux";
+
+      overlay-unstable = final: prev: {
+        unstable = import nixpkgs-unstable { inherit system; };
+      };
 
       pkgs = import nixpkgs {
         inherit system;
@@ -31,6 +36,7 @@
           nur.overlay
           neovim-nightly-overlay.overlay
           emacs-overlay.overlays.emacs
+          overlay-unstable
         ];
       };
     in {
