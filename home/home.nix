@@ -38,6 +38,8 @@ in {
 
     heavypaint
 
+    dig
+
     coreutils # stdbuf - eww (hypr)
     direnv
     discord
