@@ -138,5 +138,7 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-hyprland ];
   };
+
+  services.flatpak.enable = true;
   # programs.hyprland.enable = true;
 }
