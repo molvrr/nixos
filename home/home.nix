@@ -72,7 +72,13 @@ in {
     jq
     krita
     libnotify
-    lutris
+
+    heroic
+    (lutris.override {
+      extraPkgs = pkgs: [
+        pkgs.wineWowPackages.staging
+      ];
+    })
     maim
     mattermost-desktop
     mgba

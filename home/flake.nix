@@ -17,15 +17,18 @@
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = { self, kmonad, emacs-overlay, nur, neovim-nightly-overlay
-    , nixpkgs-unstable, home-manager, nixpkgs, ... }:
+    , nixpkgs-unstable, home-manager, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
 
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable { inherit system; };
+        nix-gaming = inputs.nix-gaming;
       };
 
       pkgs = import nixpkgs {
