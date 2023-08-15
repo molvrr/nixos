@@ -13,7 +13,10 @@
   services.blueman.enable = true;
 
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    logLevel = "DEBUG";
+  };
   # networking.networkmanager.wifi.backend = "iwd";
   networking.nameservers = [
     "127.0.0.1"
