@@ -80,7 +80,6 @@ in {
       ];
     })
     maim
-    mattermost-desktop
     mgba
     mitmproxy
     neovim-nightly
