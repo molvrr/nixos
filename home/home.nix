@@ -53,6 +53,7 @@ in {
     go
     godot_4
     gopls
+    graphviz
     grim
     haskell-language-server
     heavypaint
@@ -72,6 +73,7 @@ in {
     neovim-nightly
     nerdfonts
     nixfmt
+    nix-du
     nodePackages.typescript-language-server
     nodejs_20
     nyxt
