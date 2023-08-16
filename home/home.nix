@@ -23,24 +23,19 @@ in {
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
+    (lutris.override { extraPkgs = pkgs: [ pkgs.wineWowPackages.staging ]; })
+    (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     alacritty
     alejandra
     aria2
     bitwarden
-    typst-lsp
     blender
     bottom
     calibre
     chez
-
     cmake
-    libtool
-
-    heavypaint
-
-    dig
-
     coreutils # stdbuf - eww (hypr)
+    dig
     direnv
     discord
     emacs-unstable
@@ -56,37 +51,29 @@ in {
     gnome.nautilus
     gnumake
     go
-    gopls
     godot_4
-    haskell-language-server
-    kmonad
-    htmlq
-
-    hyprpaper
-    wl-clipboard
-    wofi
+    gopls
     grim
-    slurp
-
+    haskell-language-server
+    heavypaint
+    heroic
+    htmlq
+    hyprpaper
     imagemagick
     jq
+    kmonad
     krita
     libnotify
-
-    heroic
-    (lutris.override {
-      extraPkgs = pkgs: [
-        pkgs.wineWowPackages.staging
-      ];
-    })
+    libtool
     maim
     mgba
     mitmproxy
+    ncdu
     neovim-nightly
     nerdfonts
     nixfmt
-    nodejs_20
     nodePackages.typescript-language-server
+    nodejs_20
     nyxt
     obsidian
     pciutils
@@ -98,25 +85,27 @@ in {
     scrot
     sd
     slack
+    slurp
     socat
     spotify
     steam
     steam-tui
     steamcmd
     typst
+    typst-lsp
+    unstable.logseq
+    unzip
     virt-manager
-    (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     webcord
     weechat
     wineWowPackages.full
+    wl-clipboard
+    wofi
     wrk
-    unzip
     xclip
     yacreader
     youtube-dl
     zoom-us
-
-    unstable.logseq
   ];
 
   programs.starship = {
