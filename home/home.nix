@@ -82,6 +82,7 @@ in {
     rnix-lsp
     ruby
     sbcl
+    scrcpy
     scrot
     sd
     slack
