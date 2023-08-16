@@ -50,9 +50,7 @@ in {
     ghc
     gnome.nautilus
     gnumake
-    go
     godot_4
-    gopls
     graphviz
     grim
     haskell-language-server
@@ -149,11 +147,6 @@ in {
     enable = true;
     package = pkgs.qutebrowser-qt6;
     keyBindings = { normal = { "<Ctrl-v>" = "spawn mpv {url}"; }; };
-  };
-
-  services.mako = {
-    enable = true;
-    defaultTimeout = 1500;
   };
 
   # gtk = with pkgs;
