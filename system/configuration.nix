@@ -160,4 +160,5 @@
   services.flatpak.enable = true;
   # programs.hyprland.enable = true;
   networking.enableIPv6 = false;
+  services.fwupd.enable = true;
 }
