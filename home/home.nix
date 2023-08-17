@@ -451,31 +451,6 @@ in {
 
   services.emacs.enable = true;
 
-  gtk = with pkgs; {
-    enable = true;
-    theme = {
-      name = "Juno";
-      package = juno-theme;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = papirus-icon-theme;
-    };
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-  };
-
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
