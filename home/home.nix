@@ -40,6 +40,7 @@ in {
     gawk
     gcc
     gh
+    gimp
     gnome.nautilus
     gnumake
     godot_4
