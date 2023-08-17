@@ -104,6 +104,7 @@ in {
     wofi
     wrk
     xclip
+    xxd
     yacreader
     youtube-dl
     zoom-us
