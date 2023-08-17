@@ -105,6 +105,7 @@ in {
     wrk
     xclip
     xxd
+    retroarchFull
     yacreader
     youtube-dl
     zoom-us
