@@ -52,6 +52,7 @@ in {
     lutris
     maim
     mgba
+    ncdu
     neovim
     nerdfonts
     nix-du
