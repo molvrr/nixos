@@ -30,10 +30,12 @@
 
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.displayManager.gdm = {
+  #   enable = true;
+  #   wayland = true;
+  # };
   services.xserver.exportConfiguration = true;
   services.xserver = {
     layout = "us";
@@ -113,7 +115,6 @@
   fileSystems = {
     "/mnt/Arquivos".device = "/dev/sda1";
     "/mnt/Jogos".device = "/dev/sdb1";
-    "/mnt/Externo".device = "/dev/sdc1";
   };
 
   hardware.opentabletdriver = {
