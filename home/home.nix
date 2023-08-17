@@ -43,6 +43,7 @@ in {
     gnome.nautilus
     gnumake
     godot_4
+    graphviz
     htmlq
     imagemagick
     jq
@@ -53,6 +54,7 @@ in {
     mgba
     neovim
     nerdfonts
+    nix-du
     nixfmt
     nodejs_20
     playerctl
