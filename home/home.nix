@@ -45,6 +45,7 @@ in {
     gnumake
     godot_4
     graphviz
+    heroic
     htmlq
     imagemagick
     jq
