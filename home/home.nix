@@ -71,6 +71,7 @@ in {
     steam-tui
     steamcmd
     typst
+    unzip
     virt-manager
     vivaldi
     webcord
