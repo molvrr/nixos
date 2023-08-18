@@ -95,6 +95,11 @@ in {
   programs.nushell = {
     shellAliases = { lg = "lazygit"; };
     enable = true;
+    extraConfig = ''
+      def glog [] {
+        git log --pretty=format:"[%an] [%ai] %h %s" | lines | parse "[{author}] [{date}] {index} {description}" | move date --after description | upsert date { $in.date | into datetime }
+      }
+    '';
   };
 
   programs.feh = {
