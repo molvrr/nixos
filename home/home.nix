@@ -26,6 +26,7 @@ in {
     aria2
     bitwarden
     blender
+    cachix
     calibre
     coreutils # stdbuf - eww (hypr)
     davinci.davinci-resolve
