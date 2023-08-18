@@ -80,6 +80,7 @@ in {
     weechat
     wineWowPackages.full
     xclip
+    (xsane.override { gimpSupport = true; })
     yacreader
     youtube-dl
     zoom-us
