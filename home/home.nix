@@ -21,6 +21,7 @@ in {
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
+    (xsane.override { gimpSupport = true; })
     alacritty
     alejandra
     aria2
@@ -52,6 +53,7 @@ in {
     jq
     krita
     libnotify
+    libsForQt5.okular
     lutris
     maim
     mgba
@@ -80,7 +82,6 @@ in {
     weechat
     wineWowPackages.full
     xclip
-    (xsane.override { gimpSupport = true; })
     yacreader
     youtube-dl
     zoom-us
