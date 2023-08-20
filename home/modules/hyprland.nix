@@ -18,7 +18,7 @@
     enableNvidiaPatches = true;
     settings = {
       monitor = ",preferred,auto,auto";
-      exec-once = "waybar & firefox & hyprpaper";
+      exec-once = "waybar & hyprpaper";
       input = {
         kb_layout = "us";
         kb_variant = "intl";
@@ -41,10 +41,11 @@
 
       decoration = {
         rounding = 3;
-        blur = true;
-        blur_size = 7;
-        blur_passes = 3;
-        blur_new_optimizations = true;
+        blur = {
+          size = 7;
+          passes = 3;
+          new_optimizations = true;
+        };
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
