@@ -125,7 +125,7 @@
   hardware.nvidia = { modesetting.enable = true; };
 
   nix.settings.trusted-substituters =
-    [ "https://anmonteiro.nix-cache.workers.dev" ];
+    [ "https://anmonteiro.nix-cache.workers.dev" "https://devenv.cachix.org" ];
 
   environment.sessionVariables = rec {
     TZ = "${config.time.timeZone}";
@@ -136,7 +136,10 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
   };
 
   hardware.sane.enable = true;
