@@ -64,6 +64,7 @@ in {
     nixfmt
     nodejs_20
     playerctl
+    pureref
     ripgrep
     rnix-lsp
     ruby
