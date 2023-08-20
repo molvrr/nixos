@@ -113,8 +113,8 @@
   };
 
   fileSystems = {
-    "/mnt/Jogos".device = "/dev/sda1";
-    "/mnt/Arquivos".device = "/dev/sdb1";
+    "/mnt/Arquivos".device = "/dev/sda1";
+    "/mnt/Jogos".device = "/dev/sdb1";
   };
 
   hardware.opentabletdriver = {
