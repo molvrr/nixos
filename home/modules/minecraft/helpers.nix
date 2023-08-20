@@ -10,7 +10,7 @@ let
   ];
   versionManifest = {
     url = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json";
-    sha256 = "sha256-HiGfO13R/3KPuKXyglOI+YaTzf2AvyGeElciPJGiEL8=";
+    sha256 = "sha256-9JSyRKp3Zsrl1/Cz84cfdSEIjFVp8CySASQasFau7iI=";
   };
   versionManifestData =
     builtins.fromJSON (builtins.readFile (pkgs.fetchurl versionManifest));
