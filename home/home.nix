@@ -96,6 +96,14 @@ in {
   programs.nushell = {
     shellAliases = { lg = "lazygit"; };
     enable = true;
+    configFile.text = ''
+      $env.config = {
+        cursor_shape: {
+          emacs: block
+        }
+        show_banner: false
+      }
+    '';
     extraConfig = ''
       def glog [] {
         git log --pretty=format:"[%an] [%ai] %h %s" | lines | parse "[{author}] [{date}] {index} {description}" | move date --after description | upsert date { $in.date | into datetime }
