@@ -33,6 +33,7 @@ in {
     davinci.davinci-resolve
     direnv
     discord
+    dive
     doctl
     emacs
     fd
