@@ -85,6 +85,7 @@ in {
     wineWowPackages.full
     xclip
     yacreader
+    your-editor
     youtube-dl
     zoom-us
   ];
