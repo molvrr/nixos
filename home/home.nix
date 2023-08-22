@@ -35,7 +35,6 @@ in {
     discord
     dive
     doctl
-    emacs
     fd
     ffmpeg
     firefox
@@ -59,7 +58,6 @@ in {
     maim
     mgba
     ncdu
-    neovim
     nerdfonts
     nix-du
     nixfmt
@@ -85,7 +83,17 @@ in {
     wineWowPackages.full
     xclip
     yacreader
+
+    # Editores
+    amp
+    helix
+    kakoune
+    micro
+    emacs
+    neovim
+    zee
     your-editor
+
     youtube-dl
     zoom-us
   ];
