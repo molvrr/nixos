@@ -106,6 +106,7 @@ in {
 
   programs.nushell = {
     shellAliases = { lg = "lazygit"; };
+    package = pkgs.nushellFull;
     enable = true;
     configFile.text = ''
       $env.config = {
