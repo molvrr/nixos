@@ -43,6 +43,7 @@ in {
     gcc
     gh
     gimp
+    git-crypt
     gnome.nautilus
     gnumake
     godot_4
