@@ -33,6 +33,7 @@ in {
     bottom
     calibre
     chez
+    google-chrome
     cmake
     coreutils # stdbuf - eww (hypr)
     dig
