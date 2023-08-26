@@ -70,8 +70,9 @@ in {
     ncdu
     neovim-nightly
     nerdfonts
-    nixfmt
     nix-du
+    nixfmt
+    nixopsUnstable
     nodePackages.typescript-language-server
     nodejs_20
     nyxt
@@ -105,7 +106,6 @@ in {
     wrk
     xclip
     xxd
-    retroarchFull
     yacreader
     youtube-dl
     zoom-us
