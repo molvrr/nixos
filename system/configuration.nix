@@ -18,11 +18,7 @@
     logLevel = "DEBUG";
   };
   # networking.networkmanager.wifi.backend = "iwd";
-  networking.nameservers = [
-    "127.0.0.1"
-    "8.8.8.8"
-    "8.8.4.4"
-  ];
+  networking.nameservers = [ "127.0.0.1" "8.8.8.8" "8.8.4.4" ];
 
   time.timeZone = "America/Maceio";
 
@@ -55,7 +51,8 @@
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
+      ExecStart =
+        "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
     };
   };
 
@@ -93,7 +90,7 @@
     driSupport32Bit = true;
   };
 
-  users.groups.uinput = {};
+  users.groups.uinput = { };
 
   services.atd.enable = true;
 
@@ -143,7 +140,15 @@
   };
 
   nix.settings.trusted-substituters =
-    [ "https://anmonteiro.nix-cache.workers.dev" ];
+    [ "https://anmonteiro.nix-cache.workers.dev" "https://cache.nixos.org" ];
+
+  nix.settings.substituters =
+    [ "https://anmonteiro.nix-cache.workers.dev" "https://cache.nixos.org" ];
+
+  nix.settings.trusted-public-keys = [
+    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    "ocaml.nix-cache.com-1:/xI2h2+56rwFfKyyFVbkJSeGqSIYMC/Je+7XXqGKDIY="
+  ];
 
   environment.sessionVariables = rec {
     TZ = "${config.time.timeZone}";
@@ -154,7 +159,10 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
   };
 
   services.flatpak.enable = true;
