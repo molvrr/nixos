@@ -74,8 +74,6 @@ in {
     nix-du
     nixfmt
     nixopsUnstable
-    nodePackages.typescript-language-server
-    nodejs_20
     nyxt
     obsidian
     pciutils
