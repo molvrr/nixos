@@ -38,22 +38,9 @@
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon = {
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome = {
     enable = true;
-    extraWingpanelIndicators = with pkgs; [
-      monitor
-      wingpanel-indicator-ayatana
-    ];
-  };
-  systemd.user.services.indicatorapp = {
-    description = "indicator-application-gtk3";
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart =
-        "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
-    };
   };
 
   services.xserver.exportConfiguration = true;
@@ -155,14 +142,6 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
     GTK_USE_PORTAL = "1";
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
   };
 
   services.flatpak.enable = true;
