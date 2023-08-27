@@ -196,6 +196,7 @@ in {
     enable = true;
     userEmail = "mateuscolvr@gmail.com";
     userName = "Mateus Cruz";
+    extraConfig.init.defaultBranch = "main";
   };
 
   home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; GTK_IM_MODULE = "xim"; };
