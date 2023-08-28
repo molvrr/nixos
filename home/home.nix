@@ -43,7 +43,7 @@ in {
     fd
     ffmpeg
     file
-    firefox-wayland
+    unstable.firefox
     fzf
     gawk
     gcc
@@ -199,7 +199,7 @@ in {
     extraConfig.init.defaultBranch = "main";
   };
 
-  home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; GTK_IM_MODULE = "xim"; };
+  # home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; GTK_IM_MODULE = "xim"; };
 
   programs.vscode = {
     enable = true;
