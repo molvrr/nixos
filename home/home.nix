@@ -56,6 +56,7 @@ in {
     google-chrome
     graphviz
     grim
+    grimblast
     haskell-language-server
     heavypaint
     htmlq

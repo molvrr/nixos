@@ -18,7 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, kmonad, emacs-overlay, nur, neovim-nightly-overlay
@@ -28,7 +31,6 @@
 
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable { inherit system; };
-        nix-gaming = inputs.nix-gaming;
       };
 
       pkgs = import nixpkgs {
@@ -40,6 +42,7 @@
           neovim-nightly-overlay.overlay
           emacs-overlay.overlays.emacs
           overlay-unstable
+          inputs.hyprland-contrib.overlays.default
         ];
       };
     in {
