@@ -8,6 +8,8 @@ let
   };
 
   heavypaint = pkgs.callPackage ./heavypaint.nix {};
+
+  xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge.nix {};
 in {
   imports = [
     # ./modules/dunst.nix
@@ -25,6 +27,7 @@ in {
   home.packages = with pkgs; [
     (lutris.override { extraPkgs = pkgs: [ pkgs.wineWowPackages.staging ]; })
     (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
+    (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
     alacritty
     alejandra
     aria2
@@ -102,13 +105,11 @@ in {
     webcord
     weechat
     wineWowPackages.full
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
     wl-clipboard
     wofi
     wrk
     xclip
+    xwaylandvideobridge
     xxd
     yacreader
     youtube-dl
