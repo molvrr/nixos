@@ -91,7 +91,6 @@ in {
     sd
     slack
     slurp
-    socat
     spotify
     steam
     steam-tui
