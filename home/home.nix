@@ -26,7 +26,6 @@ in {
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    (lutris.override { extraPkgs = pkgs: [ pkgs.wineWowPackages.staging ]; })
     (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
     alacritty
@@ -59,7 +58,6 @@ in {
     grim
     haskell-language-server
     heavypaint
-    heroic
     htmlq
     hyprpaper
     imagemagick
