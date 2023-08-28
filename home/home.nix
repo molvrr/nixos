@@ -92,6 +92,7 @@ in {
     steam
     steam-tui
     steamcmd
+    tofi
     typst
     typst-lsp
     unstable.firefox
