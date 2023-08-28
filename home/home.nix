@@ -18,6 +18,7 @@ in {
     # ./modules/hyprland.nix
     ./modules/mpv.nix
     ./modules/tmux.nix
+    ./modules/tofi.nix
   ];
 
   programs.home-manager.enable = true;
@@ -95,7 +96,6 @@ in {
     steam
     steam-tui
     steamcmd
-    tofi
     typst
     typst-lsp
     unstable.firefox
