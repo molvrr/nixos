@@ -33,7 +33,6 @@ in {
     bottom
     calibre
     chez
-    google-chrome
     cmake
     coreutils # stdbuf - eww (hypr)
     dig
@@ -43,7 +42,6 @@ in {
     fd
     ffmpeg
     file
-    unstable.firefox
     fzf
     gawk
     gcc
@@ -52,6 +50,7 @@ in {
     gnome.nautilus
     gnumake
     godot_4
+    google-chrome
     graphviz
     grim
     haskell-language-server
@@ -65,6 +64,7 @@ in {
     krita
     libnotify
     libtool
+    luajitPackages.moonscript
     maim
     mgba
     mitmproxy
@@ -94,6 +94,7 @@ in {
     steamcmd
     typst
     typst-lsp
+    unstable.firefox
     unstable.logseq
     unzip
     virt-manager
