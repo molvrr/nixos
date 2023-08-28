@@ -101,6 +101,9 @@ in {
     webcord
     weechat
     wineWowPackages.full
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
     wl-clipboard
     wofi
     wrk
