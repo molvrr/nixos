@@ -61,6 +61,7 @@ in {
     heavypaint
     htmlq
     hyprpaper
+    hyprprop
     imagemagick
     jq
     kmonad
