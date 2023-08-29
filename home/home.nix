@@ -125,6 +125,7 @@ in {
   programs.nushell = {
     configFile.text = ''
       $env.config = {
+        show_banner: false
         cursor_shape: {
           emacs: block
         }
