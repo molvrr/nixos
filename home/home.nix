@@ -208,10 +208,10 @@ in {
   };
 
   # home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; GTK_IM_MODULE = "xim"; };
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-  };
+  # home.sessionVariables = {
+  #   XDG_CURRENT_DESKTOP = "Hyprland";
+  #   XDG_SESSION_TYPE = "wayland";
+  # };
 
   programs.vscode = {
     enable = true;
