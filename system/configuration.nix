@@ -148,4 +148,12 @@
   programs.hyprland.enable = true;
   networking.enableIPv6 = false;
   services.fwupd.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
 }
