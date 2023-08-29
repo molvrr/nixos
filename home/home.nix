@@ -65,6 +65,7 @@ in {
     hyprprop
     imagemagick
     jq
+    lf
     kmonad
     krita
     libnotify
