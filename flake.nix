@@ -1,6 +1,4 @@
 {
-  description = "Home Manager configuration of mateus";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "nixpkgs";
@@ -24,23 +22,22 @@
     };
   };
 
-  outputs = { self, kmonad, emacs-overlay, nur, neovim-nightly-overlay
-    , nixpkgs-unstable, home-manager, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
 
       overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable { inherit system; };
+        unstable = import inputs.nixpkgs-unstable { inherit system; };
       };
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          kmonad.overlays.default
-          nur.overlay
-          neovim-nightly-overlay.overlay
-          emacs-overlay.overlays.emacs
+          inputs.kmonad.overlays.default
+          inputs.nur.overlay
+          inputs.neovim-nightly-overlay.overlay
+          inputs.emacs-overlay.overlays.emacs
           overlay-unstable
           inputs.hyprland-contrib.overlays.default
         ];
@@ -48,7 +45,12 @@
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./home/home.nix ];
+      };
+
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./system/configuration.nix ];
       };
     };
 }
