@@ -19,6 +19,7 @@ in {
     ./modules/mpv.nix
     ./modules/tmux.nix
     ./modules/tofi.nix
+    ./modules/waybar.nix
   ];
 
   programs.home-manager.enable = true;
@@ -27,7 +28,7 @@ in {
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
-    (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
+    (unstable.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
     alacritty
     alejandra
     aria2
