@@ -71,6 +71,7 @@ in {
     libnotify
     libtool
     luajitPackages.moonscript
+    luajit
     maim
     mgba
     mitmproxy
