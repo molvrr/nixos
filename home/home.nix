@@ -98,6 +98,7 @@ in {
     steam
     steam-tui
     steamcmd
+    stremio
     typst
     typst-lsp
     unstable.firefox
