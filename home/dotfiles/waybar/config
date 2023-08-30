@@ -10,6 +10,7 @@
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
+        "battery",
         "network",
         "pulseaudio",
         "pulseaudio#microphone",
