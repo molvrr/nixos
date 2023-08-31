@@ -90,6 +90,7 @@
   environment.systemPackages = with pkgs; [ pulseaudio git ];
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.unstable.docker_24;
   virtualisation.libvirtd.enable = true;
 
   system.stateVersion = "23.05";
