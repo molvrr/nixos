@@ -126,6 +126,7 @@ in {
   };
 
   programs.nushell = {
+    package = pkgs.unstable.nushell;
     configFile.text = ''
       $env.config = {
         show_banner: false

@@ -81,7 +81,7 @@
   users.users.mateus = {
     isNormalUser = true;
     description = "mateus";
-    shell = pkgs.nushell;
+    shell = pkgs.unstable.nushell;
     extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" ];
   };
 
