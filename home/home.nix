@@ -102,12 +102,10 @@ in {
     typst
     typst-lsp
     unstable.firefox
-    unstable.logseq
     unzip
     virt-manager
     webcord
     weechat
-    wineWowPackages.full
     wl-clipboard
     wofi
     wrk
