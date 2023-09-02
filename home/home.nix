@@ -144,6 +144,7 @@ in {
 
   programs.zoxide = {
     enable = true;
+    package = pkgs.unstable.zoxide;
     enableNushellIntegration = true;
   };
 
