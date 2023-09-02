@@ -114,6 +114,7 @@ in {
 
   programs.starship = {
     enable = true;
+    package = pkgs.unstable.starship;
     settings = { add_newline = false; };
     enableNushellIntegration = true;
   };
