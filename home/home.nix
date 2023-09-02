@@ -128,6 +128,8 @@ in {
           emacs: block
         }
       }
+
+      register ${pkgs.unstable.nushellPlugins.query}/bin/nu_plugin_query
     '';
     shellAliases = { lg = "lazygit"; };
     enable = true;
