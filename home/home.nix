@@ -33,7 +33,6 @@ in {
     alejandra
     aria2
     bitwarden
-    blender
     bottom
     calibre
     chez
@@ -51,15 +50,12 @@ in {
     gcc
     gh
     ghc
-    gnome.nautilus
     gnumake
-    godot_4
     google-chrome
     graphviz
     grim
     grimblast
     haskell-language-server
-    heavypaint
     htmlq
     hyprpaper
     hyprprop
@@ -86,7 +82,6 @@ in {
     pciutils
     playerctl
     ripgrep
-    rnix-lsp
     ruby
     sbcl
     scrcpy
