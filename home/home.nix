@@ -110,6 +110,9 @@ in {
     yacreader
     youtube-dl
     zoom-us
+
+    yed
+    helix
   ];
 
   programs.starship = {
