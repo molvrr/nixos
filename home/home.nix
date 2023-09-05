@@ -82,7 +82,7 @@ in {
     pciutils
     playerctl
     ripgrep
-    ruby
+    ruby_3_2
     sbcl
     scrcpy
     scrot
