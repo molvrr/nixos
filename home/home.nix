@@ -27,8 +27,8 @@ in {
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     (unstable.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
+    (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     alacritty
     alejandra
     aria2
@@ -56,18 +56,19 @@ in {
     grim
     grimblast
     haskell-language-server
+    helix
     htmlq
     hyprpaper
     hyprprop
     imagemagick
     jq
-    lf
     kmonad
     krita
+    lf
     libnotify
     libtool
-    luajitPackages.moonscript
     luajit
+    luajitPackages.moonscript
     maim
     mgba
     mitmproxy
@@ -81,6 +82,7 @@ in {
     obsidian
     pciutils
     playerctl
+    postman
     ripgrep
     ruby_3_2
     sbcl
@@ -108,11 +110,9 @@ in {
     xwaylandvideobridge
     xxd
     yacreader
+    yed
     youtube-dl
     zoom-us
-
-    yed
-    helix
   ];
 
   programs.starship = {
