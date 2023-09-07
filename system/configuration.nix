@@ -156,4 +156,6 @@
     "root"
     "mateus"
   ];
+
+  programs.nix-ld.enable = true;
 }
