@@ -125,17 +125,6 @@
     daemon.enable = true;
   };
 
-  nix.settings.trusted-substituters =
-    [ "https://anmonteiro.nix-cache.workers.dev" "https://cache.nixos.org" ];
-
-  nix.settings.substituters =
-    [ "https://anmonteiro.nix-cache.workers.dev" "https://cache.nixos.org" ];
-
-  nix.settings.trusted-public-keys = [
-    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    "ocaml.nix-cache.com-1:/xI2h2+56rwFfKyyFVbkJSeGqSIYMC/Je+7XXqGKDIY="
-  ];
-
   environment.sessionVariables = rec {
     TZ = "${config.time.timeZone}";
     WLR_NO_HARDWARE_CURSORS = "1";
