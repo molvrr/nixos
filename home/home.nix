@@ -27,7 +27,7 @@ in {
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
-    (unstable.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
+    (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
     (vivaldi.override { enableWidevine = true; proprietaryCodecs = true; })
     alacritty
     alejandra
@@ -98,7 +98,7 @@ in {
     stremio
     typst
     typst-lsp
-    unstable.firefox
+    firefox
     unzip
     virt-manager
     webcord
@@ -117,13 +117,13 @@ in {
 
   programs.starship = {
     enable = true;
-    package = pkgs.unstable.starship;
+    package = pkgs.starship;
     settings = { add_newline = false; };
     enableNushellIntegration = true;
   };
 
   programs.nushell = {
-    package = pkgs.unstable.nushell;
+    package = pkgs.nushell;
     configFile.text = ''
       $env.config = {
         show_banner: false
@@ -132,7 +132,7 @@ in {
         }
       }
 
-      register ${pkgs.unstable.nushellPlugins.query}/bin/nu_plugin_query
+      register ${pkgs.nushellPlugins.query}/bin/nu_plugin_query
     '';
     shellAliases = { lg = "lazygit"; };
     enable = true;
@@ -150,7 +150,7 @@ in {
 
   programs.zoxide = {
     enable = true;
-    package = pkgs.unstable.zoxide;
+    package = pkgs.zoxide;
     enableNushellIntegration = true;
   };
 
@@ -158,7 +158,6 @@ in {
 
   programs.qutebrowser = {
     enable = true;
-    package = pkgs.qutebrowser-qt6;
     keyBindings = { normal = { "<Ctrl-v>" = "spawn mpv {url}"; }; };
   };
 

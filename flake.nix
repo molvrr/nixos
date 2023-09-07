@@ -1,9 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.05";
-    nixpkgs-unstable.url = "nixpkgs";
+    nixpkgs.url = "nixpkgs";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,10 +25,6 @@
     let
       system = "x86_64-linux";
 
-      overlay-unstable = final: prev: {
-        unstable = import inputs.nixpkgs-unstable { inherit system; };
-      };
-
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -38,7 +33,6 @@
           inputs.nur.overlay
           inputs.neovim-nightly-overlay.overlay
           inputs.emacs-overlay.overlays.emacs
-          overlay-unstable
           inputs.hyprland-contrib.overlays.default
         ];
       };

@@ -88,7 +88,7 @@
   users.users.mateus = {
     isNormalUser = true;
     description = "mateus";
-    shell = pkgs.unstable.nushell;
+    shell = pkgs.nushell;
     extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" ];
   };
 
@@ -97,7 +97,7 @@
   environment.systemPackages = with pkgs; [ pulseaudio git ];
 
   virtualisation.docker.enable = true;
-  virtualisation.docker.package = pkgs.unstable.docker_24;
+  virtualisation.docker.package = pkgs.docker_24;
   virtualisation.libvirtd.enable = true;
 
   system.stateVersion = "23.05";
