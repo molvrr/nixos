@@ -150,4 +150,9 @@
       xdg-desktop-portal-hyprland
     ];
   };
+
+  nix.settings.trusted-users = [
+    "root"
+    "mateus"
+  ];
 }
