@@ -46,6 +46,7 @@ in {
     gnome.nautilus
     gnumake
     godot_4
+    google-chrome
     graphviz
     heroic
     htmlq
