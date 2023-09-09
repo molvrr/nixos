@@ -10,7 +10,7 @@ in {
   imports = [
     # ./modules/dunst.nix
     # ./modules/i3.nix
-    ./modules/minecraft.nix
+    # ./modules/minecraft.nix
     ./modules/hyprland.nix
     ./modules/mpv.nix
     ./modules/tmux.nix
@@ -30,7 +30,6 @@ in {
     cachix
     calibre
     coreutils # stdbuf - eww (hypr)
-    davinci.davinci-resolve
     direnv
     discord
     dive

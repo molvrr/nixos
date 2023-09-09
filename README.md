@@ -2,6 +2,6 @@
 ```shell
 $ git clone git@github.com:molvrr/nixos.git
 $ cd nixos
-$ sudo nixos-rebuild switch --flake ./system#
-$ home-manager switch --flake ./home#mateus
+$ sudo nixos-rebuild switch --flake .#
+$ home-manager switch --flake .#mateus
 ```
