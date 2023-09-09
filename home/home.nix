@@ -85,6 +85,8 @@ in {
     xclip
     yacreader
 
+    soulseekqt
+
     # Editores
     amp
     helix
