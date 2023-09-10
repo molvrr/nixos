@@ -27,6 +27,7 @@ in {
     aria2
     bitwarden
     blender
+    bottom
     cachix
     calibre
     coreutils # stdbuf - eww (hypr)
