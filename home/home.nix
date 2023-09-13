@@ -90,6 +90,7 @@ in {
 
     # Editores
     amp
+    fte
     helix
     kakoune
     micro
