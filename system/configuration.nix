@@ -79,7 +79,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ pulseaudio git ];
+  environment.systemPackages = with pkgs; [ pulseaudio git config.nur.repos.LuisChDev.nordvpn ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.package = pkgs.docker;
