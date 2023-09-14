@@ -78,6 +78,7 @@ in {
     steamcmd
     typst
     unzip
+    valgrind
     virt-manager
     vivaldi
     webcord
