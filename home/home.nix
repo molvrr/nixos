@@ -33,6 +33,7 @@ in {
     alejandra
     aria2
     bitwarden
+    blender
     bottom
     calibre
     chez
