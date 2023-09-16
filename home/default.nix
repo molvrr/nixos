@@ -135,6 +135,7 @@ in {
       }
 
       register ${pkgs.nushellPlugins.query}/bin/nu_plugin_query
+      source ${./pulseaudio.nu}
     '';
     shellAliases = { lg = "lazygit"; };
     enable = true;
