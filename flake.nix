@@ -39,7 +39,7 @@
     in {
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/home.nix ];
+        modules = [ ./home ];
       };
 
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
