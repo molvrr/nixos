@@ -51,6 +51,7 @@ in {
     gcc
     gh
     ghc
+    git-crypt
     gnumake
     google-chrome
     graphviz
