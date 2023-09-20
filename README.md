@@ -9,5 +9,3 @@ $ home-manager switch --flake .#mateus
 ```shell
 $ nix flake lock --update-input nixpkgs
 ```
-## TODO
-- [ ] Fazer home-manager seguir nixpkgs
