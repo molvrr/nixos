@@ -63,6 +63,7 @@ in {
     hyprpaper
     hyprprop
     imagemagick
+    jetbrains.idea-community
     jq
     kmonad
     krita
