@@ -145,6 +145,11 @@ in {
     enableNushellIntegration = true;
   };
 
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   programs.lazygit = { enable = true; };
 
   services.emacs.enable = true;
