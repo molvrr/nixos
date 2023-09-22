@@ -32,6 +32,7 @@ in {
     alacritty
     alejandra
     aria2
+    asciinema
     bitwarden
     blender
     bottom
