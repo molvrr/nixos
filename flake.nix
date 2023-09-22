@@ -15,12 +15,12 @@
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./system/configuration.nix nur.nixosModules.nur ];
+        modules = [ ./system nur.nixosModules.nur ];
       };
 
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/home.nix ];
+        modules = [ ./home ];
       };
     };
 }
