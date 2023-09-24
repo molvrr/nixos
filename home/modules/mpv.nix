@@ -4,6 +4,7 @@
     bindings = {
       WHEEL_UP = "add volume 2";
       WHEEL_DOWN = "add volume -2";
+      R = "sub-reload";
     };
     config = {
       slang = "eng,fr,pt";
