@@ -54,6 +54,7 @@ in {
     htmlq
     imagemagick
     jq
+    kak-lsp
     krita
     libnotify
     libsForQt5.okular
