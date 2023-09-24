@@ -36,6 +36,10 @@ in {
     discord
     dive
     doctl
+
+    dune_3
+    ocaml
+
     fd
     ffmpeg
     firefox
