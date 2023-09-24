@@ -32,6 +32,7 @@ in {
     cachix
     calibre
     coreutils # stdbuf - eww (hypr)
+    davinci-resolve
     direnv
     discord
     dive
