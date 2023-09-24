@@ -106,7 +106,7 @@ in {
     zee
     your-editor
 
-    youtube-dl
+    yt-dlp
     zoom-us
   ];
 
