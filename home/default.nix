@@ -26,6 +26,7 @@ in {
     alejandra
     aria2
     asciinema
+    aseprite-unfree
     bitwarden
     blender
     bottom
