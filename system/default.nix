@@ -32,6 +32,9 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.displayManager.lightdm.greeter.enable = false;
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "mateus";
   # services.xserver.displayManager.gdm = {
   #   enable = true;
   #   wayland = true;
