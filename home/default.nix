@@ -104,7 +104,7 @@ in {
     kakoune
     micro
     emacs
-    (neovim.override { extraLuaPackages = p: with p; [ moonscript ]; })
+    (neovim.override { extraLuaPackages = p: with p; [ moonscript http ]; })
     zee
     your-editor
 
