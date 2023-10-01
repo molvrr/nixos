@@ -98,6 +98,7 @@ in {
     slurp
     spotify
     steam
+    steam-run
     steam-tui
     steamcmd
     stremio
