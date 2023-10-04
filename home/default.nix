@@ -82,6 +82,7 @@ in {
     socat
     spotify
     steam
+    steam-run
     steam-tui
     steamcmd
     typst
