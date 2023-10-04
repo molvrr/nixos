@@ -156,4 +156,5 @@
   hardware.sane.extraBackends = [ pkgs.epkowa pkgs.utsushi ];
 
   services.udev.packages = [ pkgs.utsushi ];
+  services.flatpak.enable = true;
 }
