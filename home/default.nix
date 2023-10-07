@@ -72,6 +72,7 @@ in {
     nix-du
     nixfmt
     nodejs_20
+    osu-lazer
     playerctl
     pureref
     ripgrep
