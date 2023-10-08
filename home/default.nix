@@ -72,6 +72,7 @@ in {
     nix-du
     nixfmt
     nodejs_20
+    obsidian
     osu-lazer
     playerctl
     pureref
