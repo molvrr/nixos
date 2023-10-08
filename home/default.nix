@@ -22,6 +22,7 @@ in {
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     (xsane.override { gimpSupport = true; })
+    aegisub
     alacritty
     alejandra
     aria2
