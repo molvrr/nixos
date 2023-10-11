@@ -101,6 +101,11 @@
         type = "internal/xwindow";
         label = "%title:0:60:...%";
       };
+
+      "module/battery" = {
+        type = "internal/battery";
+        battery = "BAT0";
+      };
     };
   };
 }
