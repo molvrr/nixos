@@ -13,7 +13,6 @@
       };
 
       startup = [
-        { command = "firefox"; }
         { command = "spotify"; }
         { command = "discord"; }
         { command = "~/.fehbg"; }
