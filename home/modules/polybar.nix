@@ -33,7 +33,7 @@
 
         modules-left = "xworkspaces xwindow";
         # modules-right = "filesystem pulseaudio xkeyboard memory cpu wlan eth date";
-        modules-right = "filesystem alsa xkeyboard date";
+        modules-right = "battery filesystem alsa xkeyboard date";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         enable-ipc = true;
