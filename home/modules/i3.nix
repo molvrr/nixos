@@ -15,7 +15,7 @@
       startup = [
         { command = "spotify"; }
         { command = "discord"; }
-        { command = "~/.fehbg"; }
+        { command = "feh --bg-scale --no-feh /home/mateus/backgroundImage2.jpg"; }
       ];
 
       keybindings = pkgs.lib.mkOptionDefault {
