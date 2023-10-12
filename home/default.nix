@@ -6,6 +6,8 @@ let
     rev = "417a613274666ce2c01ed36f20b7d56bfff87e63";
     hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
+
+  xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge.nix {};
 in {
   imports = [
     # ./modules/dunst.nix
@@ -97,6 +99,7 @@ in {
     weechat
     wineWowPackages.full
     xclip
+    xwaylandvideobridge
     yacreader
 
     soulseekqt
