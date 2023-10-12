@@ -5,6 +5,7 @@
     waybar
     eww-wayland
     wofi
+    tofi
     hyprpaper
     mpvpaper
     wl-clipboard
@@ -81,7 +82,7 @@
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
-        "$mainMod, D, exec, wofi --show drun"
+        "$mainMod, D, exec, tofi-drun --drun-launch=true"
         "$mainMod, P, pseudo, # dwindle"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"

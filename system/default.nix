@@ -30,11 +30,13 @@
 
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
-  services.xserver.displayManager.lightdm.greeter.enable = false;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "mateus";
+  services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.displayManager.lightdm.greeter.enable = false;
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "mateus";
+
   # services.xserver.displayManager.gdm = {
   #   enable = true;
   #   wayland = true;
@@ -148,7 +150,7 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
+      # xdg-desktop-portal-hyprland
     ];
   };
 
@@ -158,4 +160,10 @@
 
   services.udev.packages = [ pkgs.utsushi ];
   services.flatpak.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
 }
