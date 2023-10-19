@@ -174,4 +174,6 @@
     enable = true;
     allowedTCPPorts = [ 4656 ];
   };
+
+  services.openssh.enable = true;
 }
