@@ -92,6 +92,7 @@ in {
     steamcmd
     typst
     unzip
+    uxplay
     valgrind
     virt-manager
     vivaldi
