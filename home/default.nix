@@ -78,6 +78,7 @@ in {
     obsidian
     osu-lazer
     playerctl
+    postman
     pureref
     ripgrep
     rnix-lsp
