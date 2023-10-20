@@ -82,7 +82,7 @@ in {
     pureref
     ripgrep
     rnix-lsp
-    ruby
+    ruby_3_2
     scrot
     sd
     socat
