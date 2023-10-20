@@ -84,7 +84,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ pulseaudio git config.nur.repos.LuisChDev.nordvpn ];
+  environment.systemPackages = with pkgs; [ pulseaudio git config.nur.repos.LuisChDev.nordvpn cacert ];
 
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
