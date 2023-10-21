@@ -87,6 +87,7 @@ in {
     scrot
     sd
     slippi-netplay
+    slippi-launcher
     socat
     spotify
     steam
