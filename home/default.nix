@@ -85,6 +85,7 @@ in {
     ruby_3_2
     scrot
     sd
+    slippi-netplay
     socat
     spotify
     steam
