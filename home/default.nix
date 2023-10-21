@@ -86,7 +86,23 @@ in {
     ruby_3_2
     scrot
     sd
-    slippi-netplay
+    (slippi-netplay.overrideAttrs (prev: final: rec {
+      version = "3.3.1";
+      src = pkgs.fetchFromGitHub {
+        owner = "project-slippi";
+        repo = "Ishiiruka";
+        rev = "v${version}";
+        hash = "sha256-06hS770zo/4XnvKc9Mtxn+cAvAF6fNXR+SRzKFNoh1Y=";
+        fetchSubmodules = true;
+      };
+
+      cargoDeps = pkgs.rustPlatform.importCargoLock {
+        lockFile = "${src}/${prev.cargoRoot}/Cargo.lock";
+        outputHashes = {
+          "cpal-0.15.2" = "sha256-4C7YWUx6SZnZy6pwy0CCL3yPgaMflN1atN3cUNMbcmU=";
+        };
+      };
+    }))
     slippi-launcher
     socat
     spotify
