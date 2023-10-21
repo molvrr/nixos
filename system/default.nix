@@ -30,17 +30,13 @@
 
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  # services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
-  services.xserver.displayManager.lightdm.greeter.enable = false;
+
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "mateus";
 
-  # services.xserver.displayManager.gdm = {
-  #   enable = true;
-  #   wayland = true;
-  # };
   services.xserver.exportConfiguration = true;
   services.xserver = {
     layout = "us";
@@ -127,9 +123,6 @@
 
   fileSystems = {
     "/mnt/Arquivos".device = "/dev/disk/by-uuid/8EF4F408F4F3F077";
-    "/mnt/Externo" = {
-      device = "/dev/disk/by-uuid/D45ADC015ADBDE74";
-    };
   };
 
   hardware.opentabletdriver = {
@@ -144,18 +137,18 @@
 
   environment.sessionVariables = rec {
     TZ = "${config.time.timeZone}";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-    GTK_USE_PORTAL = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    # NIXOS_OZONE_WL = "1";
+    # GTK_USE_PORTAL = "1";
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-hyprland
-    ];
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-gtk
+  #     # xdg-desktop-portal-hyprland
+  #   ];
+  # };
 
   hardware.sane.enable = true;
 
