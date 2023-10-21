@@ -127,6 +127,9 @@
 
   fileSystems = {
     "/mnt/Arquivos".device = "/dev/disk/by-uuid/8EF4F408F4F3F077";
+    "/mnt/Externo" = {
+      device = "/dev/disk/by-uuid/D45ADC015ADBDE74";
+    };
   };
 
   hardware.opentabletdriver = {
@@ -167,7 +170,7 @@
     xwayland.enable = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 ];
+  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 8080 ];
   networking.firewall.allowedUDPPorts = [ 5353 6000 6001 7011 ];
 
   # To enable network-discovery
@@ -183,4 +186,6 @@
       domain = true;
     };
   };
+
+  services.komga.enable = true;
 }
