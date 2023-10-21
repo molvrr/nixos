@@ -41,6 +41,7 @@ in {
     discord
     dive
     doctl
+    dolphin-emu
 
     dune_3
     ocaml
