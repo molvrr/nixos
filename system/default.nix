@@ -181,4 +181,6 @@
   };
 
   services.komga.enable = true;
+
+  powerManagement.cpuFreqGovernor = "performance";
 }
