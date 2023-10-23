@@ -2,11 +2,10 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    nur.url = "github:nix-community/NUR";
     ssbm.url = "github:djanatyn/ssbm-nix";
   };
 
-  outputs = { self, home-manager, nixpkgs, nur, ssbm }:
+  outputs = { self, home-manager, nixpkgs, ssbm }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -17,7 +16,7 @@
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./system nur.nixosModules.nur ];
+        modules = [ ./system ];
       };
 
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
