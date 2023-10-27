@@ -162,7 +162,7 @@
     xwayland.enable = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 8080 ];
+  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 8080 22 ];
   networking.firewall.allowedUDPPorts = [ 5353 6000 6001 7011 ];
 
   # To enable network-discovery
@@ -182,4 +182,6 @@
   services.komga.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
+
+  services.openssh.enable = true;
 }
