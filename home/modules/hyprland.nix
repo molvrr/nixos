@@ -129,7 +129,18 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      env = [ "XCURSOR_SIZE, 32" ];
+      env = [
+        "XCURSOR_SIZE, 32"
+        "WLR_NO_HARDWARE_CURSORS, 1"
+        "XDG_CURRENT_DESKTOP, Hyprland"
+        "XDG_SESSION_DESKTOP, Hyprland"
+        "XDG_SESSION_TYPE, wayland"
+        "LIBVA_DRIVER_NAME, nvidia"
+        "GBM_BACKEND, nvidia-drm"
+        "WLR_NO_HARDWARE_CURSORS, 1"
+        "NIXOS_OZONE_WL, 1"
+        "GTK_USE_PORTAL, 1"
+      ];
 
       windowrule = [
         "float,title:^(Firefox — Sharing Indicator)$"
@@ -143,11 +154,5 @@
     defaultTimeout = 1500;
   };
 
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    LIBVA_DRIVER_NAME = "nvidia";
-    GBM_BACKEND = "nvidia-drm";
-  };
+  home.sessionVariables = { };
 }
