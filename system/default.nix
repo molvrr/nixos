@@ -7,6 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = with pkgs; [ linuxKernel.packages.linux_6_1.v4l2loopback ];
 
   networking.hostName = "nixos";
 
