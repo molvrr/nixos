@@ -47,7 +47,7 @@ in {
     ocaml
 
     fd
-    ffmpeg
+    ffmpeg-full
     firefox
     fzf
     gawk
