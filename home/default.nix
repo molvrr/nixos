@@ -42,7 +42,7 @@ in {
     dive
     doctl
     dolphin-emu
-
+    droidcam
     dune_3
     ocaml
 
