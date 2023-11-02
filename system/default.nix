@@ -78,8 +78,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [ pulseaudio git cacert ];
 
   virtualisation.docker.enable = true;

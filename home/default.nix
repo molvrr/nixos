@@ -41,7 +41,6 @@ in {
     discord
     dive
     doctl
-    dolphin-emu
     droidcam
     dune_3
     ocaml
@@ -60,7 +59,6 @@ in {
     godot_4
     google-chrome
     graphviz
-    heroic
     htmlq
     imagemagick
     jq
@@ -79,7 +77,6 @@ in {
     obsidian
     osu-lazer
     playerctl
-    postman
     pureref
     ripgrep
     rnix-lsp
