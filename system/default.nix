@@ -176,4 +176,5 @@
   };
 
   services.openssh.enable = true;
+  services.usbmuxd.enable = true;
 }

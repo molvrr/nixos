@@ -70,6 +70,7 @@ in {
     kmonad
     krita
     lf
+    libimobiledevice
     libnotify
     libtool
     luajit
