@@ -40,7 +40,13 @@
   services.xserver.enable = true;
 
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.desktopManager.pantheon = {
+    enable = true;
+    extraWingpanelIndicators = with pkgs; [
+      monitor
+      wingpanel-indicator-ayatana
+    ];
+  };
 
   services.xserver.exportConfiguration = true;
   services.xserver = {
@@ -163,10 +169,7 @@
     ];
   };
 
-  nix.settings.trusted-users = [
-    "root"
-    "mateus"
-  ];
+  nix.settings.trusted-users = [ "root" "mateus" ];
 
   programs.nix-ld.enable = true;
 
@@ -177,4 +180,14 @@
 
   services.openssh.enable = true;
   services.usbmuxd.enable = true;
+
+  systemd.user.services.indicatorapp = {
+    description = "indicator-application-gtk3";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart =
+        "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
+    };
+  };
 }
