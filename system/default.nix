@@ -7,7 +7,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = with pkgs; [ linuxKernel.packages.linux_6_1.v4l2loopback ];
+  boot.extraModulePackages = with pkgs;
+    [ linuxKernel.packages.linux_6_1.v4l2loopback ];
 
   networking.hostName = "nixos";
 
@@ -32,7 +33,23 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.desktopManager.pantheon = {
+    enable = true;
+    extraWingpanelIndicators = with pkgs; [
+      monitor
+      wingpanel-indicator-ayatana
+    ];
+  };
+
+  systemd.user.services.indicatorapp = {
+    description = "indicator-application-gtk3";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart =
+        "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
+    };
+  };
 
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "mateus";
@@ -112,7 +129,7 @@
       livebook = {
         autoStart = true;
         image = "ghcr.io/livebook-dev/livebook";
-        ports = [ "6080:8080/tcp" "6081:8081/tcp"];
+        ports = [ "6080:8080/tcp" "6081:8081/tcp" ];
         volumes = [ "/home/mateus/livebook:/data" ];
         user = "1000:100";
       };
@@ -133,16 +150,15 @@
   nix.settings.trusted-substituters =
     [ "https://anmonteiro.nix-cache.workers.dev" "https://devenv.cachix.org" ];
 
-  environment.sessionVariables = rec {
-    TZ = "${config.time.timeZone}";
-  };
+  environment.sessionVariables = rec { TZ = "${config.time.timeZone}"; };
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-hyprland
-    ];
+    extraPortals = with pkgs;
+      [
+        xdg-desktop-portal-gtk
+        # xdg-desktop-portal-hyprland
+      ];
   };
 
   hardware.sane.enable = true;
@@ -164,7 +180,7 @@
   # To enable network-discovery
   services.avahi = {
     enable = true;
-    nssmdns = true;  # printing
+    nssmdns = true; # printing
     openFirewall = true; # ensuring that firewall ports are open as needed
     publish = {
       enable = true;
