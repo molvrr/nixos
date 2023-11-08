@@ -113,6 +113,7 @@ in {
     valgrind
     virt-manager
     vivaldi
+    vscode
     webcord
     weechat
     wineWowPackages.full
