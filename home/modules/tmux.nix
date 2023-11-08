@@ -17,6 +17,8 @@
     ];
     extraConfig = ''
       set -g default-terminal 'screen-256color'
+      set -g renumber-windows on
+
       bind r source-file ~/.config/tmux/tmux.conf
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
