@@ -30,6 +30,7 @@ in {
     aria2
     asciinema
     aseprite-unfree
+    bat
     bitwarden
     blender
     bottom
