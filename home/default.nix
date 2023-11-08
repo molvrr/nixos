@@ -79,6 +79,7 @@ in {
     osu-lazer
     playerctl
     pureref
+    qpwgraph
     ripgrep
     rnix-lsp
     ruby_3_2
