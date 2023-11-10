@@ -44,6 +44,7 @@ in {
     doctl
     droidcam
     dune_3
+    vlc
     ocaml
 
     fd
