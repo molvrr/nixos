@@ -83,7 +83,7 @@ in {
     qpwgraph
     ripgrep
     rnix-lsp
-    ruby_3_2
+    ruby_3_0
     scrot
     sd
     (slippi-netplay.overrideAttrs (prev: final: rec {
