@@ -75,6 +75,7 @@ in {
     nerdfonts
     nix-du
     nixfmt
+    nyxt
     nodejs_20
     obsidian
     osu-lazer
