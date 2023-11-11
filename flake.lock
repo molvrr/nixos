@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "feh-patch": {
+      "locked": {
+        "lastModified": 1697751341,
+        "narHash": "sha256-sGgB+RUeNDXeLx8eRY8QHm3JFQJic5/+AKTd3bsJB6s=",
+        "owner": "CharlzKlug",
+        "repo": "nixpkgs",
+        "rev": "b78f81b114ac2cb288a6a2af37d2a7dd836ff1c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CharlzKlug",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -262,6 +277,7 @@
     },
     "root": {
       "inputs": {
+        "feh-patch": "feh-patch",
         "home-manager": "home-manager",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs_2",
