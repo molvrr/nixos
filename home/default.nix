@@ -38,6 +38,10 @@ in {
     calibre
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
+    dhall
+    haskellPackages.dhall-json
+    haskellPackages.dhall-toml
+    haskellPackages.dhall-bash
     direnv
     discord
     dive
