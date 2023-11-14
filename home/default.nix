@@ -112,6 +112,7 @@ in {
     slippi-launcher
     socat
     spotify
+    sqlite
     steam
     steam-run
     steam-tui
