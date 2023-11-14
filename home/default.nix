@@ -60,6 +60,7 @@ in {
     gh
     gimp
     git-crypt
+    glamoroustoolkit
     gnome.nautilus
     gnumake
     godot_4
