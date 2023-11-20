@@ -18,6 +18,7 @@
     extraConfig = ''
       set -g default-terminal 'screen-256color'
       set -g renumber-windows on
+      set-option -sa terminal-features ',/run/current-system/sw/bin/nu:RGB'
 
       bind C-a send-prefix
 
