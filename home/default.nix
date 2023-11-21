@@ -135,6 +135,7 @@ in {
 
     taskwarrior
     taskwarrior-tui
+    timewarrior
 
     soulseekqt
 
@@ -226,5 +227,17 @@ in {
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme=1;
     };
+  };
+
+  home.file.".task/hooks/on-modify.timewarrior" = 
+  let
+    code = ./timewarrior-hook.timewarrior;
+  in
+  {
+    text = ''
+    #!${pkgs.python3}/bin/python3
+    ${builtins.readFile code}
+    '';
+    executable = true;
   };
 }
