@@ -134,6 +134,7 @@ in {
     yacreader
 
     taskwarrior
+    taskwarrior-tui
 
     soulseekqt
 
@@ -163,7 +164,7 @@ in {
   };
 
   programs.nushell = {
-    shellAliases = { lg = "lazygit"; };
+    shellAliases = { lg = "lazygit"; tt = "taskwarrior-tui"; };
     package = pkgs.nushellFull;
     enable = true;
     configFile.text = ''
