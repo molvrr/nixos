@@ -196,4 +196,5 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   services.openssh.enable = true;
+  services.atd.enable = true;
 }
