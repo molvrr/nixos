@@ -65,6 +65,7 @@ in {
     gnumake
     godot_4
     google-chrome
+    grafx2
     graphviz
     htmlq
     imagemagick
