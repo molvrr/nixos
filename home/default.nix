@@ -150,6 +150,10 @@ in {
 
     yt-dlp
     zoom-us
+
+    ghidra
+    strace
+    ltrace
   ];
 
   programs.starship = {
