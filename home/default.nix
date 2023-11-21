@@ -133,6 +133,8 @@ in {
     xwaylandvideobridge
     yacreader
 
+    taskwarrior
+
     soulseekqt
 
     # Editores
