@@ -48,6 +48,7 @@ in {
     doctl
     droidcam
     dune_3
+    evilpixie
     vlc
     ocaml
 
