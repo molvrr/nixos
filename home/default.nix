@@ -82,6 +82,7 @@ in {
     jq
     kak-lsp
     krita
+    texlive.combined.scheme-medium
     libnotify
     libsForQt5.okular
     lutris
