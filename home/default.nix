@@ -155,7 +155,7 @@ in {
     helix
     kakoune
     micro
-    emacs
+    emacs29
     (neovim.override { extraLuaPackages = p: with p; [ http ]; })
     zee
     your-editor
@@ -215,8 +215,6 @@ in {
   };
 
   programs.lazygit = { enable = true; };
-
-  services.emacs.enable = true;
 
   programs.obs-studio = {
     enable = true;
