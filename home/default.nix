@@ -249,4 +249,6 @@ in {
     '';
     executable = true;
   };
+
+  news.display = "silent";
 }
