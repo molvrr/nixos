@@ -37,6 +37,7 @@ in {
     alacritty
     alejandra
     aria2
+    artem
     asciinema
     aseprite-unfree
     bat
