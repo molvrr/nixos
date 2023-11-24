@@ -45,6 +45,7 @@ in {
     bottom
     cachix
     calibre
+    cmake
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
     dhall
