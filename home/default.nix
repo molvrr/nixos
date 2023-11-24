@@ -45,7 +45,6 @@ in {
     bottom
     cachix
     calibre
-    cmake
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
     dhall
@@ -156,7 +155,7 @@ in {
     helix
     kakoune
     micro
-    emacs29
+    ((emacsPackagesFor emacs29).emacsWithPackages (epkgs: with epkgs; [ vterm ]))
     (neovim.override { extraLuaPackages = p: with p; [ http ]; })
     zee
     your-editor
