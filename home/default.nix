@@ -100,6 +100,7 @@ in {
     playerctl
     pureref
     qpwgraph
+    rpcs3
     ripgrep
     rnix-lsp
     ruby_3_3
