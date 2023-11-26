@@ -2,7 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./pantheon.nix
+    # ./pantheon.nix
+    ./gnome.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -134,15 +135,6 @@
     [ "https://anmonteiro.nix-cache.workers.dev" "https://devenv.cachix.org" ];
 
   environment.sessionVariables = rec { TZ = "${config.time.timeZone}"; };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs;
-      [
-        xdg-desktop-portal-gtk
-        # xdg-desktop-portal-hyprland
-      ];
-  };
 
   hardware.sane.enable = true;
 
