@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
-
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./pantheon.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -32,25 +34,6 @@
 
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon = {
-    enable = true;
-    extraWingpanelIndicators = with pkgs; [
-      monitor
-      wingpanel-indicator-ayatana
-    ];
-  };
-
-  systemd.user.services.indicatorapp = {
-    description = "indicator-application-gtk3";
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart =
-        "${pkgs.indicator-application-gtk3}/libexec/indicator-application/indicator-application-service";
-    };
-  };
-
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "mateus";
 
