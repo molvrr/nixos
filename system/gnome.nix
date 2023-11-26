@@ -20,4 +20,7 @@
     hitori
     atomix
   ]);
+
+  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 }
