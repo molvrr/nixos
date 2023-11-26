@@ -21,6 +21,6 @@
     atomix
   ]);
 
-  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator gnomeExtensions.dash-to-dock ];
+  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator gnomeExtensions.dash-to-dock gnome3.gnome-tweaks ];
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 }
