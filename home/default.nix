@@ -86,6 +86,7 @@ in {
     texlive.combined.scheme-medium
     libnotify
     libsForQt5.okular
+    lsof
     lutris
     maim
     mgba
