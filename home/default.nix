@@ -46,6 +46,7 @@ in {
     bottom
     cachix
     calibre
+    cloc
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
     dhall
