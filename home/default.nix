@@ -46,6 +46,7 @@ in {
     bottom
     cachix
     calibre
+    clang-tools
     cloc
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
