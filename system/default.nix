@@ -172,4 +172,8 @@
 
   services.openssh.enable = true;
   services.atd.enable = true;
+
+  boot.kernel.sysctl = {
+      "kernel.sysrq" = 1;
+    };
 }
