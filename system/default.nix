@@ -110,13 +110,6 @@
         environment = { TZ = "America/Sao_Paulo"; };
         volumes = [ "etcPihole:/etc/pihole" "etcDnsmasqD:/etc/dnsmasq.d" ];
       };
-      livebook = {
-        autoStart = true;
-        image = "ghcr.io/livebook-dev/livebook";
-        ports = [ "6080:8080/tcp" "6081:8081/tcp" ];
-        volumes = [ "/home/mateus/livebook:/data" ];
-        user = "1000:100";
-      };
     };
   };
 
