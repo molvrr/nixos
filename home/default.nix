@@ -70,6 +70,7 @@ in {
     fzf
     gawk
     gcc
+    gdb
     gh
     gimp
     git-crypt
