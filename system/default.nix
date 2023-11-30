@@ -169,4 +169,11 @@
   boot.kernel.sysctl = {
       "kernel.sysrq" = 1;
     };
+
+  systemd.user.services.puedo = {
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.pueue}/bin/pueued -v";
+        };
+    };
 }

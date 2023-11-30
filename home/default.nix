@@ -103,6 +103,7 @@ in {
     obsidian
     osu-lazer
     playerctl
+    pueue
     pureref
     qpwgraph
     rpcs3
