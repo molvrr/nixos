@@ -92,6 +92,7 @@ in {
     lsof
     lutris
     maim
+    mindustry
     mgba
     ncdu
     nerdfonts
