@@ -110,6 +110,7 @@ in {
     ripgrep
     rnix-lsp
     ruby_3_3
+    sapling
     scrot
     sd
     (slippi-netplay.overrideAttrs (prev: final: rec {
