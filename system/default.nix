@@ -79,7 +79,7 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
-  environment.systemPackages = with pkgs; [ pulseaudio git cacert ];
+  environment.systemPackages = with pkgs; [ pulseaudio git cacert virtiofsd ];
 
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
