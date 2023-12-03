@@ -60,6 +60,7 @@ in {
     doctl
     droidcam
     dune_3
+    edgedb
     evilpixie
     vlc
     ocaml
