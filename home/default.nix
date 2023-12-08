@@ -25,6 +25,7 @@ in {
     ./modules/hyprland.nix
     ./modules/mpv.nix
     ./modules/tmux.nix
+    ./modules/neovim.nix
   ];
 
   programs.home-manager.enable = true;
@@ -167,7 +168,7 @@ in {
     kakoune
     micro
     ((emacsPackagesFor emacs29).emacsWithPackages (epkgs: with epkgs; [ vterm ]))
-    (neovim.override { extraLuaPackages = p: with p; [ http ]; })
+    # (neovim.override { extraLuaPackages = p: with p; [ http ]; })
     zee
     your-editor
 

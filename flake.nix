@@ -6,15 +6,17 @@
     neovim.url = "github:nix-community/neovim-nightly-overlay";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
     feh-patch.url = "github:CharlzKlug/nixpkgs";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, home-manager, nixpkgs, ssbm, neovim, feh-patch }:
+  outputs = { self, home-manager, nixpkgs, ssbm, neovim, ... }@inputs:
     let
       system = "x86_64-linux";
-      feh-pkg = feh-patch.legacyPackages.${system};
-      feh-overlay = prev: final: {
-        feh = feh-pkg.feh;
-      };
+      feh-pkg = inputs.feh-patch.legacyPackages.${system};
+      feh-overlay = prev: final: { feh = feh-pkg.feh; };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -29,7 +31,7 @@
 
       homeConfigurations."mateus" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home ];
+        modules = [ ./home inputs.nixvim.homeManagerModules.nixvim ];
       };
     };
 }
