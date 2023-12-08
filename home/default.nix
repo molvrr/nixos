@@ -139,6 +139,7 @@ in {
     steam-run
     steam-tui
     steamcmd
+    tree
     typst
     unzip
     uxplay
