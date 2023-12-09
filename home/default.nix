@@ -55,6 +55,7 @@ in {
     haskellPackages.dhall-json
     haskellPackages.dhall-toml
     haskellPackages.dhall-bash
+    helvum
     direnv
     discord
     dive
