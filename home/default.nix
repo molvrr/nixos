@@ -96,6 +96,7 @@ in {
     lutris
     maim
     mindustry
+    mitmproxy
     mgba
     ncdu
     nerdfonts
