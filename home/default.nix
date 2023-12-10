@@ -176,6 +176,7 @@ in {
 
     yt-dlp
     zoom-us
+    zip
 
     ghidra
     strace
