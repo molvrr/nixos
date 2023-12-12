@@ -67,6 +67,7 @@ in {
     vlc
     fd
     ffmpeg-full
+    file
     firefox
     fzf
     gawk
@@ -251,7 +252,7 @@ in {
     };
   };
 
-  home.file.".task/hooks/on-modify.timewarrior" = 
+  home.file.".task/hooks/on-modify.timewarrior" =
   let
     code = ./timewarrior-hook.timewarrior;
   in
