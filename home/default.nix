@@ -41,6 +41,7 @@ in {
     artem
     asciinema
     aseprite-unfree
+    babashka
     bat
     bitwarden
     blender
