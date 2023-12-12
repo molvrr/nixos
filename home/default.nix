@@ -62,12 +62,9 @@ in {
     dive
     doctl
     droidcam
-    dune_3
     edgedb
     evilpixie
     vlc
-    ocaml
-
     fd
     ffmpeg-full
     firefox
@@ -182,7 +179,7 @@ in {
     ghidra
     strace
     ltrace
-  ];
+  ] ++ (with ocaml-ng.ocamlPackages_5_1; [ ocaml dune_3 findlib ]);
 
   programs.starship = {
     enable = true;

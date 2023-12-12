@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    nix-ocaml.url = "github:nix-ocaml/nix-overlays";
     ssbm.url = "github:djanatyn/ssbm-nix";
     neovim.url = "github:nix-community/neovim-nightly-overlay";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +21,8 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ ssbm.overlay neovim.overlay feh-overlay ];
+        overlays =
+          [ ssbm.overlay neovim.overlay feh-overlay inputs.nix-ocaml.overlays.default ];
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
