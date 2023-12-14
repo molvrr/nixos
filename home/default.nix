@@ -16,7 +16,6 @@ let
         };
     });
 
-  minexwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge.nix {};
 in {
   imports = [
     # ./modules/dunst.nix
