@@ -176,6 +176,8 @@ in {
     yt-dlp
     zoom-us
     zip
+    x11vnc
+    xorg.libxcvt
 
     ghidra
     strace
