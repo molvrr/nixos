@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
 
   home.packages = with pkgs; [
+    wayvnc
     wev
     waybar
     eww-wayland

@@ -16,7 +16,7 @@ let
         };
     });
 
-  xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge.nix {};
+  minexwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge.nix {};
 in {
   imports = [
     # ./modules/dunst.nix
