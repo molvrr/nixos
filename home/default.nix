@@ -102,7 +102,6 @@ in {
     nixfmt
     nyxt
     nodejs_20
-    obsidian
     osu-lazer
     playerctl
     pueue
