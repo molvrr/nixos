@@ -140,6 +140,7 @@ in {
     steam-run
     steam-tui
     steamcmd
+    surf
     tree
     typst
     unzip
