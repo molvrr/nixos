@@ -66,6 +66,7 @@ in {
     vlc
     fd
     ffmpeg-full
+    figlet
     file
     firefox
     fzf
