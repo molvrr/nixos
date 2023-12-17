@@ -147,7 +147,7 @@ in {
     uxplay
     valgrind
     virt-manager
-    vivaldi
+    (vivaldi.override { proprietaryCodecs = true; })
     vscode
     webcord
     weechat
