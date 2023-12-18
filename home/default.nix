@@ -40,6 +40,7 @@ in {
     artem
     asciinema
     aseprite-unfree
+    awscli
     babashka
     bat
     bitwarden
