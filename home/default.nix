@@ -159,6 +159,8 @@ in {
     xwaylandvideobridge
     yacreader
 
+    zig
+
     taskwarrior
     taskwarrior-tui
     timewarrior
