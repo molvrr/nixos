@@ -90,6 +90,7 @@ in {
     imagemagick
     jq
     kak-lsp
+    kitty
     krita
     texlive.combined.scheme-medium
     libnotify
