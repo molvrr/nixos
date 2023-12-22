@@ -51,6 +51,7 @@ in {
     calibre
     clang-tools
     cloc
+    cmus
     coreutils # stdbuf - eww (hypr)
     davinci-resolve
     dhall
