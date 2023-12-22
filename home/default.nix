@@ -145,6 +145,7 @@ in {
     steam-tui
     steamcmd
     surf
+    termusic
     tree
     typst
     unzip
