@@ -165,6 +165,7 @@ in {
     yacreader
 
     zig
+    zls
 
     taskwarrior
     taskwarrior-tui
