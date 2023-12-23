@@ -177,7 +177,7 @@ in {
     helix
     kakoune
     micro
-    ((emacsPackagesFor emacs29).emacsWithPackages (epkgs: with epkgs; [ vterm ]))
+    ((emacsPackagesFor emacs29).emacsWithPackages (epkgs: with epkgs; [ vterm lsp-bridge ]))
     # (neovim.override { extraLuaPackages = p: with p; [ http ]; })
     zee
     your-editor
