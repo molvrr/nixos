@@ -152,6 +152,7 @@ in {
     typst
     unzip
     uxplay
+    unixtools.xxd
     valgrind
     virt-manager
     (vivaldi.override { proprietaryCodecs = true; })
