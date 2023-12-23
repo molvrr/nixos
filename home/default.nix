@@ -36,6 +36,7 @@ in {
     aegisub
     alacritty
     alejandra
+    amberol
     anki
     aria2
     artem
