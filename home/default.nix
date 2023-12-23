@@ -158,6 +158,7 @@ in {
     webcord
     weechat
     wineWowPackages.full
+    xsel
     xclip
     xwaylandvideobridge
     yacreader
