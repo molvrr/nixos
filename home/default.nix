@@ -69,6 +69,8 @@ in {
     edgedb
     evilpixie
     vlc
+    vhs
+    ttyd
     fd
     ffmpeg-full
     figlet
