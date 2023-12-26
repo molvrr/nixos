@@ -150,6 +150,7 @@ in {
     termusic
     tree
     typst
+    twitch-cli
     unzip
     uxplay
     unixtools.xxd
