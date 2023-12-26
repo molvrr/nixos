@@ -48,6 +48,7 @@ in {
     bitwarden
     blender
     bottom
+    bundix
     cachix
     calibre
     clang-tools
