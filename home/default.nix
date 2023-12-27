@@ -113,6 +113,7 @@ in {
     nyxt
     nodejs_20
     osu-lazer
+    parallel
     playerctl
     pueue
     pureref
