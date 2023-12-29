@@ -142,8 +142,8 @@
     xwayland.enable = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 8080 22 ];
-  networking.firewall.allowedUDPPorts = [ 5353 6000 6001 7011 4380 ];
+  networking.firewall.allowedTCPPorts = [ 7000 7001 7100 8080 22 9993 ];
+  networking.firewall.allowedUDPPorts = [ 5353 6000 6001 7011 4380 9993 ];
 
   # To enable network-discovery
   services.avahi = {
@@ -175,5 +175,7 @@
     serviceConfig = {
       ExecStart = "${pkgs.pueue}/bin/pueued -v";
         };
-    };
+  };
+
+  services.zerotierone.enable = true;
 }
