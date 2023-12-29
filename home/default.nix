@@ -81,6 +81,7 @@ in {
     gcc
     gdb
     gh
+    ghc
     gimp
     git-crypt
     glamoroustoolkit
