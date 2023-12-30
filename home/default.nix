@@ -166,6 +166,7 @@ in {
     webcord
     weechat
     wineWowPackages.full
+    wireshark
     xsel
     xclip
     xwaylandvideobridge
