@@ -93,6 +93,7 @@ in {
     graphviz
     htmlq
     imagemagick
+    ispell
     jq
     kak-lsp
     kitty
