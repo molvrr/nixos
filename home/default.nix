@@ -117,6 +117,7 @@ in {
     nodejs_20
     osu-lazer
     parallel
+    popcorntime
     playerctl
     pueue
     pureref
