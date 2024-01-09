@@ -112,6 +112,7 @@ in {
     nerdfonts
     nix-du
     nixfmt
+    nvd
     nyxt
     nodejs_20
     osu-lazer
