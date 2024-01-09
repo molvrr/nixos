@@ -154,6 +154,7 @@ in {
     steam-run
     steam-tui
     steamcmd
+    stremio
     surf
     termusic
     tree
