@@ -55,7 +55,6 @@ in {
     cloc
     cmus
     coreutils # stdbuf - eww (hypr)
-    davinci-resolve
     dhall
     haskellPackages.dhall-json
     haskellPackages.dhall-toml

@@ -17,7 +17,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
     settings = {
       monitor = ",preferred,auto,auto";
       exec-once = "waybar & hyprpaper";
