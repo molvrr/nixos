@@ -211,7 +211,7 @@ in {
     ltrace
 
     unrar
-  ] ++ (with ocaml-ng.ocamlPackages_5_1; [ ocaml dune_3 findlib utop ]);
+  ] ++ (with ocaml-ng.ocamlPackages_5_1; [ ocaml dune_3 findlib utop ocaml-lsp ocamlformat ]);
 
   programs.starship = {
     enable = true;
