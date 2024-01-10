@@ -81,7 +81,10 @@ in {
     gcc
     gdb
     gh
-    (haskellPackages.ghcWithPackages (pkgs: with pkgs; [network]))
+
+    (haskellPackages.ghcWithPackages (pkgs: with pkgs; [network ghcid]))
+    ghcid
+
     gimp
     git-crypt
     glamoroustoolkit
