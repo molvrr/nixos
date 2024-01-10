@@ -34,6 +34,7 @@ in {
   home.packages = with pkgs; [
     (xsane.override { gimpSupport = true; })
     aegisub
+    (agda.withPackages [ pkgs.agdaPackages.standard-library ])
     alacritty
     alejandra
     amberol
