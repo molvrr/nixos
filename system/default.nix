@@ -178,6 +178,6 @@
 
   services.zerotierone.enable = true;
 
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ mozc ];
-  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
+  i18n.inputMethod.enabled = "fcitx5";
 }
