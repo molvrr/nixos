@@ -177,4 +177,7 @@
   };
 
   services.zerotierone.enable = true;
+
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ mozc ];
+  i18n.inputMethod.enabled = "ibus";
 }
