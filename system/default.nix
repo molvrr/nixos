@@ -126,7 +126,7 @@
   nix.settings.trusted-substituters =
     [ "https://anmonteiro.nix-cache.workers.dev" "https://devenv.cachix.org" ];
 
-  environment.sessionVariables = rec { TZ = "${config.time.timeZone}"; };
+  environment.sessionVariables = rec { TZ = "${config.time.timeZone}"; EDITOR = "nvim"; };
 
   hardware.sane.enable = true;
 
