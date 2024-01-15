@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     # ./pantheon.nix
@@ -165,19 +164,17 @@
   services.openssh.enable = true;
   services.atd.enable = true;
 
-  boot.kernel.sysctl = {
-      "kernel.sysrq" = 1;
-    };
+  boot.kernel.sysctl = { "kernel.sysrq" = 1; };
 
   systemd.user.services.puedo = {
     wantedBy = [ "default.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.pueue}/bin/pueued -v";
-        };
+    serviceConfig = { ExecStart = "${pkgs.pueue}/bin/pueued -v"; };
   };
 
   services.zerotierone.enable = true;
 
   i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc ];
   i18n.inputMethod.enabled = "fcitx5";
+
+  fonts.packages = with pkgs; [ noto-fonts-cjk ];
 }
