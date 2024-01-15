@@ -19,7 +19,11 @@
     xwayland.enable = true;
     settings = {
       monitor = ",preferred,auto,auto";
-      exec-once = "waybar & hyprpaper";
+      exec-once = [
+        "waybar"
+        "hyprpaper"
+        "fcitx5"
+      ];
       input = {
         kb_layout = "us";
         kb_variant = "intl";
