@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     # ./pantheon.nix
-    ./gnome.nix
+    # ./gnome.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -32,7 +32,7 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  services.xserver.enable = true;
+  services.xserver.enable = false;
   services.xserver.videoDrivers = [ "nvidia" ];
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "mateus";
