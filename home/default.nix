@@ -98,6 +98,7 @@ in {
     graphviz
     htmlq
     imagemagick
+    insomnia
     ispell
     jq
     kak-lsp
