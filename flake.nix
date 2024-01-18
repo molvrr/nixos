@@ -11,18 +11,26 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sg = { url = "github:sourcegraph/sg.nvim"; };
   };
 
   outputs = { self, home-manager, nixpkgs, ssbm, neovim, ... }@inputs:
     let
       system = "x86_64-linux";
       feh-pkg = inputs.feh-patch.legacyPackages.${system};
-      feh-overlay = prev: final: { feh = feh-pkg.feh; };
+      feh-overlay = prev: final: {
+        feh = feh-pkg.feh;
+        sgnvim = inputs.sg.packages.${system}.default;
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays =
-          [ ssbm.overlay neovim.overlay feh-overlay inputs.nix-ocaml.overlays.default ];
+        overlays = [
+          ssbm.overlay
+          neovim.overlay
+          feh-overlay
+          inputs.nix-ocaml.overlays.default
+        ];
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

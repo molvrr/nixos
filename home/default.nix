@@ -154,6 +154,7 @@ in {
       };
     }))
     slippi-launcher
+    sgnvim
     socat
     spotify
     sqlite
