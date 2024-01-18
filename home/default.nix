@@ -114,6 +114,7 @@ in {
     mgba
     ncdu
     nerdfonts
+    ngrok
     nix-du
     nixfmt
     nvd
