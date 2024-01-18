@@ -129,6 +129,7 @@ in {
     pueue
     pureref
     qpwgraph
+    redis
     rpcs3
     ripgrep
     rnix-lsp
