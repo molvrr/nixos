@@ -51,6 +51,7 @@ in {
     bottom
     bun
     bundix
+    bruno
     cachix
     calibre
     clang-tools
