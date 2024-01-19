@@ -160,6 +160,7 @@ in {
     socat
     spotify
     sqlite
+    sqlmap
     steam
     steam-run
     steam-tui
