@@ -58,6 +58,7 @@ in {
     cloc
     cmus
     coreutils # stdbuf - eww (hypr)
+    dirb
     dhall
     haskellPackages.dhall-json
     haskellPackages.dhall-toml
