@@ -82,7 +82,7 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Return, exec, alacritty"
+        "$mainMod, Return, exec, [tile]kitty"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
@@ -144,6 +144,7 @@
         "WLR_NO_HARDWARE_CURSORS, 1"
         "NIXOS_OZONE_WL, 1"
         "GTK_USE_PORTAL, 1"
+        "KITTY_DISABLE_WAYLAND, 1"
       ];
 
       windowrule = [
