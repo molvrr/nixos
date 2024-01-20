@@ -100,6 +100,7 @@ in {
     htmlq
     imagemagick
     insomnia
+    ios-webkit-debug-proxy
     ispell
     jq
     kak-lsp
