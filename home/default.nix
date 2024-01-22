@@ -99,6 +99,7 @@ in {
     graphviz
     htmlq
     imagemagick
+    imv
     insomnia
     ios-webkit-debug-proxy
     ispell
