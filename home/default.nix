@@ -8,13 +8,13 @@ let
   };
 
   zoxide = pkgs.zoxide.overrideAttrs (finalAttrs: prevAttrs: {
-      src = pkgs.fetchFromGitHub {
-          owner = "ajeetdsouza";
-          repo = "zoxide";
-          rev = "3022cf3686b85288e6fbecb2bd23ad113fd83f3b";
-          sha256 = "sha256-ut+/F7cQ5Xamb7T45a78i0mjqnNG9/73jPNaDLxzAx8=";
-        };
-    });
+    src = pkgs.fetchFromGitHub {
+      owner = "ajeetdsouza";
+      repo = "zoxide";
+      rev = "3022cf3686b85288e6fbecb2bd23ad113fd83f3b";
+      sha256 = "sha256-ut+/F7cQ5Xamb7T45a78i0mjqnNG9/73jPNaDLxzAx8=";
+    };
+  });
 
 in {
   imports = [
@@ -31,202 +31,212 @@ in {
   home.username = "mateus";
   home.homeDirectory = "/home/mateus";
   home.stateVersion = "23.05";
-  home.packages = with pkgs; [
-    (xsane.override { gimpSupport = true; })
-    aegisub
-    (agda.withPackages [ pkgs.agdaPackages.standard-library ])
-    alacritty
-    alejandra
-    amberol
-    anki
-    aria2
-    artem
-    asciinema
-    aseprite-unfree
-    awscli
-    babashka
-    bat
-    bitwarden
-    blender
-    bottom
-    bun
-    bundix
-    bruno
-    cachix
-    calibre
-    clang-tools
-    cloc
-    cmus
-    coreutils # stdbuf - eww (hypr)
-    dirb
-    dhall
-    haskellPackages.dhall-json
-    haskellPackages.dhall-toml
-    haskellPackages.dhall-bash
-    helvum
-    direnv
-    discord
-    dive
-    doctl
-    droidcam
-    edgedb
-    evilpixie
-    vlc
-    vhs
-    ttyd
-    fd
-    ffmpeg-full
-    figlet
-    file
-    firefox
-    fzf
-    gawk
-    gcc
-    gdb
-    gh
+  home.packages = with pkgs;
+    [
+      (xsane.override { gimpSupport = true; })
+      aegisub
+      (agda.withPackages [ pkgs.agdaPackages.standard-library ])
+      alacritty
+      alejandra
+      amberol
+      anki
+      aria2
+      artem
+      asciinema
+      aseprite-unfree
+      awscli
+      babashka
+      bat
+      bitwarden
+      blender
+      bottom
+      bun
+      bundix
+      bruno
+      cachix
+      calibre
+      clang-tools
+      cloc
+      cmus
+      coreutils # stdbuf - eww (hypr)
+      dirb
+      dhall
+      haskellPackages.dhall-json
+      haskellPackages.dhall-toml
+      haskellPackages.dhall-bash
+      helvum
+      direnv
+      discord
+      dive
+      doctl
+      droidcam
+      edgedb
+      evilpixie
+      vlc
+      vhs
+      ttyd
+      fd
+      ffmpeg-full
+      figlet
+      file
+      firefox
+      fzf
+      gawk
+      gcc
+      gdb
+      gh
 
-    (haskellPackages.ghcWithPackages (pkgs: with pkgs; [network ghcid]))
-    ghcid
+      (haskellPackages.ghcWithPackages (pkgs: with pkgs; [ network ghcid ]))
+      ghcid
 
-    gimp
-    git-crypt
-    glamoroustoolkit
-    gnome.nautilus
-    gnumake
-    godot_4
-    google-chrome
-    grafx2
-    graphviz
-    htmlq
-    imagemagick
-    imv
-    insomnia
-    ios-webkit-debug-proxy
-    ispell
-    jq
-    kak-lsp
-    kitty
-    krita
-    texlive.combined.scheme-medium
-    libnotify
-    libsForQt5.okular
-    localstack
-    lsof
-    lutris
-    maim
-    mindustry
-    mitmproxy
-    mgba
-    ncdu
-    nerdfonts
-    ngrok
-    nix-du
-    nixfmt
-    nvd
-    nyxt
-    nodejs_20
-    osu-lazer
-    parallel
-    popcorntime
-    playerctl
-    pueue
-    pureref
-    qpwgraph
-    redis
-    rpcs3
-    ripgrep
-    rnix-lsp
-    ruby_3_3
-    sapling
-    scrot
-    sd
-    (slippi-netplay.overrideAttrs (prev: final: rec {
-      version = "3.3.1";
-      src = pkgs.fetchFromGitHub {
-        owner = "project-slippi";
-        repo = "Ishiiruka";
-        rev = "v${version}";
-        hash = "sha256-06hS770zo/4XnvKc9Mtxn+cAvAF6fNXR+SRzKFNoh1Y=";
-        fetchSubmodules = true;
-      };
-
-      cargoDeps = pkgs.rustPlatform.importCargoLock {
-        lockFile = "${src}/${prev.cargoRoot}/Cargo.lock";
-        outputHashes = {
-          "cpal-0.15.2" = "sha256-4C7YWUx6SZnZy6pwy0CCL3yPgaMflN1atN3cUNMbcmU=";
+      gimp
+      git-crypt
+      glamoroustoolkit
+      gnome.nautilus
+      gnumake
+      godot_4
+      google-chrome
+      grafx2
+      graphviz
+      htmlq
+      imagemagick
+      imv
+      insomnia
+      ios-webkit-debug-proxy
+      ispell
+      jq
+      kak-lsp
+      kitty
+      krita
+      texlive.combined.scheme-medium
+      libnotify
+      libsForQt5.okular
+      localstack
+      lsof
+      lutris
+      maim
+      mindustry
+      mitmproxy
+      mgba
+      ncdu
+      nerdfonts
+      ngrok
+      nix-du
+      nixfmt
+      nvd
+      nyxt
+      nodejs_20
+      osu-lazer
+      parallel
+      popcorntime
+      playerctl
+      pueue
+      pureref
+      qpwgraph
+      redis
+      rpcs3
+      ripgrep
+      rnix-lsp
+      ruby_3_3
+      sapling
+      scrot
+      sd
+      (slippi-netplay.overrideAttrs (prev: final: rec {
+        version = "3.3.1";
+        src = pkgs.fetchFromGitHub {
+          owner = "project-slippi";
+          repo = "Ishiiruka";
+          rev = "v${version}";
+          hash = "sha256-06hS770zo/4XnvKc9Mtxn+cAvAF6fNXR+SRzKFNoh1Y=";
+          fetchSubmodules = true;
         };
-      };
-    }))
-    slippi-launcher
-    sgnvim
-    socat
-    spotify
-    sqlite
-    sqlmap
-    steam
-    steam-run
-    steam-tui
-    steamcmd
-    stremio
-    surf
-    termusic
-    tree
-    typst
-    twitch-cli
-    unzip
-    uxplay
-    unixtools.xxd
-    valgrind
-    virt-manager
-    (vivaldi.override { proprietaryCodecs = true; })
-    vscode
-    webcord
-    weechat
-    wineWowPackages.full
-    wireshark
-    xsel
-    xclip
-    xwaylandvideobridge
-    yacreader
 
-    zap
-    zig
-    zls
+        cargoDeps = pkgs.rustPlatform.importCargoLock {
+          lockFile = "${src}/${prev.cargoRoot}/Cargo.lock";
+          outputHashes = {
+            "cpal-0.15.2" =
+              "sha256-4C7YWUx6SZnZy6pwy0CCL3yPgaMflN1atN3cUNMbcmU=";
+          };
+        };
+      }))
+      slippi-launcher
+      sgnvim
+      socat
+      spotify
+      sqlite
+      sqlmap
+      steam
+      steam-run
+      steam-tui
+      steamcmd
+      stremio
+      surf
+      termusic
+      tree
+      typst
+      twitch-cli
+      unzip
+      uxplay
+      unixtools.xxd
+      valgrind
+      virt-manager
+      (vivaldi.override { proprietaryCodecs = true; })
+      vscode
+      webcord
+      weechat
+      wineWowPackages.full
+      wireshark
+      xsel
+      xclip
+      xwaylandvideobridge
+      yacreader
 
-    taskwarrior
-    taskwarrior-tui
-    timewarrior
+      zap
+      zig
+      zls
 
-    soulseekqt
+      taskwarrior
+      taskwarrior-tui
+      timewarrior
 
-    # Editores
-    amp
-    fte
-    helix
-    kakoune
-    micro
-    ((emacsPackagesFor emacs29).emacsWithPackages (epkgs: with epkgs; [ vterm lsp-bridge ]))
-    # (neovim.override { extraLuaPackages = p: with p; [ http ]; })
-    zee
-    your-editor
+      soulseekqt
 
-    yt-dlp
-    zoom-us
-    zip
-    x11vnc
-    xorg.libxcvt
+      # Editores
+      amp
+      fte
+      helix
+      kakoune
+      micro
+      ((emacsPackagesFor emacs29).emacsWithPackages
+        (epkgs: with epkgs; [ vterm lsp-bridge ]))
+      # (neovim.override { extraLuaPackages = p: with p; [ http ]; })
+      zee
+      your-editor
 
-    ghidra
-    strace
-    ltrace
+      yt-dlp
+      zoom-us
+      zip
+      x11vnc
+      xorg.libxcvt
 
-    unrar
+      ghidra
+      strace
+      ltrace
 
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-  ] ++ (with ocaml-ng.ocamlPackages_5_1; [ ocaml dune_3 findlib utop ocaml-lsp ocamlformat ]);
+      unrar
+
+      cargo
+      rustc
+      rust-analyzer
+      rustfmt
+    ] ++ (with ocaml-ng.ocamlPackages_5_1; [
+      ocaml
+      dune_3
+      findlib
+      utop
+      ocaml-lsp
+      ocamlformat
+    ]);
 
   programs.starship = {
     enable = true;
@@ -235,7 +245,10 @@ in {
   };
 
   programs.nushell = {
-    shellAliases = { lg = "lazygit"; tt = "taskwarrior-tui"; };
+    shellAliases = {
+      lg = "lazygit";
+      tt = "taskwarrior-tui";
+    };
     package = pkgs.nushellFull;
     enable = true;
     configFile.text = ''
@@ -289,25 +302,24 @@ in {
 
   gtk = {
     enable = true;
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
 
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
+    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
   };
 
   home.file.".task/hooks/on-modify.timewarrior" =
-  let
-    code = ./timewarrior-hook.timewarrior;
-  in
-  {
-    text = ''
-    #!${pkgs.python3}/bin/python3
-    ${builtins.readFile code}
-    '';
-    executable = true;
+    let code = ./timewarrior-hook.timewarrior;
+    in {
+      text = ''
+        #!${pkgs.python3}/bin/python3
+        ${builtins.readFile code}
+      '';
+      executable = true;
+    };
+
+  programs.atuin = {
+    enable = true;
+    enableNushellIntegration = true;
   };
 
   news.display = "silent";
