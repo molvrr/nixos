@@ -126,6 +126,7 @@ in {
       nvd
       nyxt
       nodejs_20
+      openssl
       osu-lazer
       parallel
       popcorntime
