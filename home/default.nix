@@ -191,6 +191,8 @@ in {
       xwaylandvideobridge
       yacreader
 
+      wrk
+
       zap
       zig
       zls
