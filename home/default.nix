@@ -66,7 +66,6 @@ in {
       haskellPackages.dhall-bash
       helvum
       hyperfine
-      direnv
       discord
       dive
       doctl
@@ -324,6 +323,12 @@ in {
   programs.atuin = {
     enable = true;
     enableNushellIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableNushellIntegration = true;
+    nix-direnv.enable = true;
   };
 
   news.display = "silent";
