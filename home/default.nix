@@ -65,6 +65,7 @@ in {
       haskellPackages.dhall-toml
       haskellPackages.dhall-bash
       helvum
+      hyperfine
       direnv
       discord
       dive
