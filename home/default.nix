@@ -61,7 +61,6 @@ in {
       dive
       doctl
       droidcam
-      edgedb
       evilpixie
       vlc
       vhs
