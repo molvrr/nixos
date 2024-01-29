@@ -7,15 +7,6 @@ let
     hash = "sha256-MOVgzpjLHwemWhFFeXQ5gUwMnprtvNm6Xx5puBatKbs=";
   };
 
-  zoxide = pkgs.zoxide.overrideAttrs (finalAttrs: prevAttrs: {
-    src = pkgs.fetchFromGitHub {
-      owner = "ajeetdsouza";
-      repo = "zoxide";
-      rev = "3022cf3686b85288e6fbecb2bd23ad113fd83f3b";
-      sha256 = "sha256-ut+/F7cQ5Xamb7T45a78i0mjqnNG9/73jPNaDLxzAx8=";
-    };
-  });
-
 in {
   imports = [
     # ./modules/dunst.nix
@@ -281,7 +272,6 @@ in {
 
   programs.zoxide = {
     enable = true;
-    package = zoxide;
     enableNushellIntegration = true;
   };
 
