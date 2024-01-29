@@ -19,11 +19,7 @@
     xwayland.enable = true;
     settings = {
       monitor = ",preferred,auto,auto";
-      exec-once = [
-        "waybar"
-        "hyprpaper"
-        "fcitx5"
-      ];
+      exec-once = [ "waybar" "hyprpaper" "fcitx5" ];
       input = {
         kb_layout = "us";
         kb_variant = "intl";
@@ -146,6 +142,7 @@
         "NIXOS_OZONE_WL, 1"
         "GTK_USE_PORTAL, 1"
         "KITTY_DISABLE_WAYLAND, 1"
+        "GTK_THEME, Adwaita:dark"
       ];
 
       windowrule = [
@@ -158,6 +155,31 @@
   services.mako = {
     enable = true;
     defaultTimeout = 1500;
+  };
+
+  gtk = {
+    enable = true;
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+    theme = {
+      name = "Adwaita";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+  };
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+    };
   };
 
   home.sessionVariables = { };
