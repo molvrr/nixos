@@ -83,6 +83,7 @@
 
       bind = [
         "$mainMod, Return, exec, [tile]kitty"
+        "$mainMod, E, exec, nautilus"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
