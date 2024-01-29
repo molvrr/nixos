@@ -256,6 +256,8 @@ in {
       def glog [] {
         git log --pretty=format:"[%an] [%ai] %h %s" | lines | parse "[{author}] [{date}] {index} {description}" | move date --after description | upsert date { $in.date | into datetime }
       }
+
+      source ${./dotfiles/nushell/git.nu}
     '';
   };
 
