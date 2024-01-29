@@ -258,6 +258,12 @@ in {
       }
 
       source ${./dotfiles/nushell/git.nu}
+
+      module task {
+        ${builtins.readFile ./dotfiles/nushell/task.nu}
+      }
+
+      use task
     '';
   };
 
