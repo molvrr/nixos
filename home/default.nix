@@ -119,6 +119,7 @@ in {
       openssl
       osu-lazer
       parallel
+      php
       popcorntime
       playerctl
       pueue
