@@ -4,7 +4,7 @@
     home-manager.url = "github:nix-community/home-manager";
     nix-ocaml.url = "github:nix-ocaml/nix-overlays";
     ssbm.url = "github:djanatyn/ssbm-nix";
-    neovim.url = "github:nix-community/neovim-nightly-overlay";
+    neovim.url = "github:neovim/neovim?dir=contrib";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
     feh-patch.url = "github:CharlzKlug/nixpkgs";
     nixvim = {
