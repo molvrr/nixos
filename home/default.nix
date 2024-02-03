@@ -121,6 +121,7 @@ in {
       parallel
       php
       popcorntime
+      postgresql_16
       playerctl
       pueue
       pureref
