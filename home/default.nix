@@ -166,6 +166,7 @@ in {
       surf
       termusic
       tree
+      tree-sitter
       typst
       twitch-cli
       unzip
