@@ -26,7 +26,7 @@ in {
     [
       (xsane.override { gimpSupport = true; })
       aegisub
-      (agda.withPackages [ pkgs.agdaPackages.standard-library pkgs.agdaPackages.plfa ])
+      agda
       alacritty
       alejandra
       amberol
@@ -164,6 +164,7 @@ in {
       steamcmd
       stremio
       surf
+      swiProlog
       termusic
       tree
       tree-sitter
