@@ -26,7 +26,7 @@ in {
     [
       (xsane.override { gimpSupport = true; })
       aegisub
-      (agda.withPackages [ pkgs.agdaPackages.standard-library ])
+      (agda.withPackages [ pkgs.agdaPackages.standard-library pkgs.agdaPackages.plfa ])
       alacritty
       alejandra
       amberol
