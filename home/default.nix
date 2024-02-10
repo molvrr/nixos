@@ -16,6 +16,7 @@ in {
     ./modules/mpv.nix
     ./modules/tmux.nix
     ./modules/neovim.nix
+    ./modules/emacs.nix
   ];
 
   programs.home-manager.enable = true;
@@ -200,6 +201,7 @@ in {
 
       # Editores
       amp
+      ed
       fte
       helix
       kakoune
