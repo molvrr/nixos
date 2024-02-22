@@ -1,13 +1,15 @@
 local servers = {
-  {name = "rust_analyzer", opts = {}},
-  {name = "ocamllsp", opts = {}},
-  {name = "elmls", opts = {}},
-  {name = "tsserver", opts = {}},
-  {name = "hls", opts = {}},
-  {name = "gopls", opts = {}},
-  {name = "unison", opts = {}},
+  { name = "rust_analyzer", opts = {} },
+  { name = "ocamllsp",      opts = {} },
+  { name = "elmls",         opts = {} },
+  { name = "tsserver",      opts = {} },
+  -- {name = "hls", opts = {}},
+  { name = "gopls",         opts = {} },
+  { name = "unison",        opts = {} },
+  { name = "nimls",         opts = {} },
+  { name = "lua_ls",        opts = {} },
   -- {name = "roc", opts = {}},
-  {name = "elixirls", opts = {cmd = {"elixir-ls"}}},
+  -- {name = "elixirls", opts = { cmd = { 'elixir-ls' }}},
 }
 
 --[[
@@ -63,11 +65,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local setup_cmp = function()
   local cmp = require('cmp')
   cmp.setup({
-    snippet = {
-      expand = function(args)
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      end,
-    },
     view = {
       docs = {
         auto_open = true
@@ -95,7 +92,6 @@ local setup_cmp = function()
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
     }, {
       { name = 'buffer' },
     })
@@ -103,17 +99,34 @@ local setup_cmp = function()
 end
 
 local setup_lsp = function()
+  require('neodev').setup({})
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      'documentation',
+      'detail',
+      'additionalTextEdits',
+    }
+  }
   local lspconfig = require('lspconfig')
 
   for _, server in ipairs(servers) do
-    lspconfig[server.name].setup({})
+    lspconfig[server.name].setup(vim.tbl_extend('keep', server.opts, { capabilities = capabilities }))
   end
 end
 
 return {
+  { "folke/neodev.nvim",              opts = {} },
   {
     "neovim/nvim-lspconfig",
     config = setup_lsp,
-    dependencies = {{"hrsh7th/nvim-cmp", config = setup_cmp}, {"hrsh7th/cmp-nvim-lsp"}, {"L3MON4D3/LuaSnip"}, {"saadparwaiz1/cmp_luasnip"}, {"PaterJason/cmp-conjure", enabled = false}}
-  }
-} 
+    dependencies = { { "hrsh7th/nvim-cmp", config = setup_cmp }, { "hrsh7th/cmp-nvim-lsp" } }
+  },
+  -- {
+  --   'mrcjkb/haskell-tools.nvim',
+  --   version = '^3', -- Recommended
+  --   ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' }
+  -- },
+  -- { "elixir-tools/elixir-tools.nvim", opts = {} },
+}

@@ -1,7 +1,7 @@
 local opts = {
   autoindent = true,
   backup = false,
-  clipboard = "unnamedplus",
+  -- clipboard = "unnamedplus",
   completeopt = "menu,menuone,noselect",
   expandtab = true,
   fillchars = "eob: ",
@@ -30,6 +30,7 @@ local globals = {
   maplocalleader = "\\",
   omni_sql_no_default_maps = true,
   zig_fmt_autosave = false,
+  neovide_cursor_vfx_mode = 'wireframe',
   ['conjure#filetypes'] = {'fennel', 'jannet', 'hy', 'julia', 'racket', 'scheme', 'lua', 'lisp', 'python', 'sql'},
   ['conjure#client#scheme#stdio#command'] = "petite",
   ['conjure#client#scheme#stdio#prompt_pattern'] = "> $?"

@@ -1,0 +1,8 @@
+;; -*- emacs-lisp -*- <24/02/19 21:47:32 ~/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; Run `M-x tramp-cleanup-all-connections' instead.
+
+(((tramp-file-name "cache" nil nil nil nil nil nil)
+  ("tramp-version" "2.6.2.29.2"))
+ ((tramp-file-name "sudo" "mateus" nil "archlinux" nil nil nil)
+  nil))

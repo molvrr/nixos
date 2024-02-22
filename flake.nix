@@ -43,5 +43,10 @@
         inherit pkgs;
         modules = [ ./home inputs.nixvim.homeManagerModules.nixvim ];
       };
+
+      homeConfigurations."arch" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/arch.nix ];
+      };
     };
 }

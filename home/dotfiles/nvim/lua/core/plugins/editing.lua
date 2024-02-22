@@ -16,7 +16,6 @@ return {
   {"numToStr/Comment.nvim", opts = {}},
   {"stevearc/dressing.nvim", opts = {}},
   {"cshuaimin/ssr.nvim"},
-  {"nvim-neorg/neorg", build = ":Neorg sync-parsers", dependencies = {{"nvim-lua/plenary.nvim"}, {"laher/neorg-exec"}}, opts = {load = {["core.defaults"] = {}, ["core.concealer"] = {}, ["external.exec"] = {}, ["core.dirman"] = {config = {workspaces = {notes = "~/notes-neorg"}, default_workspace = "notes"}}}}},
   {"gbprod/yanky.nvim", opts = {}},
   {"Olical/conjure", enabled = false},
   {"ctrlpvim/ctrlp.vim"},

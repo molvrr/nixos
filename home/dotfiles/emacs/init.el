@@ -4,7 +4,7 @@
 
 (setq
  ;; debug-on-error t
- evil-wins nil
+ evil-wins t
  docker-compose-command "docker compose"
  auto-window-vscroll nil
  backup-inhibited t
@@ -26,7 +26,7 @@
  next-line-add-newlines t
  ring-bell-function (lambda ())
  scroll-conservatively 10000
- shell-file-name "/run/current-system/sw/bin/bash"
+ shell-file-name "/usr/bin/bash"
  straight-use-package-by-default t
  disabled-command-function nil
  word-wrap t
@@ -38,9 +38,12 @@
  display-line-numbers-width 3
  straight-use-package-by-default t
  truncate-lines t
+ org-startup-folded 'overview
  word-wrap t
  indent-tabs-mode nil
  tab-width 2)
+
+(set-face-attribute 'default nil :height 100)
 
 (add-hook
  'prog-mode-hook
@@ -109,7 +112,8 @@
   (push 'org-tempo org-modules)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.5))
   :custom-face
-  ;; (org-level-1 ((t (:height 180))))
+  (org-level-1 ((t (:height 180))))
+  (org-tag ((t (:foreground "#282828"))))
   ;; (org-level-2 ((t (:height 160))))
   ;; (org-level-3 ((t (:height 140))))
   ;; (org-level-4 ((t (:height 120))))
@@ -186,6 +190,7 @@
              (lua . t)
              (restclient . t)
              (C . t)
+						 (scheme . t)
              (ocaml . t)
              (ruby . t)))
   (org-agenda-files
@@ -222,9 +227,7 @@
   :bind ("C-c m" . osm-prefix-map)
   :custom
   (osm-server 'default)
-  (osm-copyright t)
-  :init
-  (require 'osm-ol))
+  (osm-copyright t))
 
 (use-package vertico
 	:custom
@@ -429,7 +432,7 @@
   ("C-x p c" . projectile-compile-project)
   ("C-x p s" . projectile-switch-project)
 	:custom
-	(projectile-project-search-path '("~/projects/" "~/nixos" "~/playground")))
+	(projectile-project-search-path '(("~/projects" . 2) "~/nixos" "~/playground")))
 
 (use-package git-timemachine)
 
@@ -562,7 +565,6 @@
 (keymap-set tetris-mode-map "z" #'tetris-rotate-next)
 
 (use-package dart-mode)
-(use-package lsp-bridge)
 
 (defun move-line-up ()
   (interactive)
@@ -615,7 +617,8 @@
 
 (keymap-global-set "C-t" #'recenter-top)
 
-(when evil-wins (load (join-path core-dir "core/mat-evil.el")))
+;; (when evil-wins (load (join-path core-dir "core/mat-evil.el")))
+(when evil-wins (require 'mat-evil))
 
 (use-package flycheck-mypy)
 (use-package flycheck-inline)
@@ -654,17 +657,27 @@
          ("\\.lagda.md\\'" . agda2-mode))
        auto-mode-alist))
 
-(use-package evil
-  :custom
-  (evil-auto-indent nil)
-  (evil-undo-system 'undo-redo)
-  :config
-  (evil-mode 1))
-
-(use-package evil-surround :after evil
-  :config (global-evil-surround-mode 1))
-
 (add-hook 'after-change-major-mode-hook (lambda () (electric-indent-mode -1)))
 
 (use-package prolog)
 (use-package scala-mode)
+(use-package
+  doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom
+  (doom-modeline-buffer-file-name-style 'truncate-nil))
+
+(use-package hare-mode :straight (hare-mode :type git :host sourcehut :repo "bbuccianti/hare-mode"))
+(use-package hurl-mode :straight (hurl-mode :type git :host github :repo "Orange-OpenSource/hurl" :files ("contrib/emacs/*.el")))
+(use-package yuck-mode)
+(use-package go-mode)
+
+(defun sudo-shell-command ()
+  (interactive)
+  (let ((cmd (read-string "Command: ")))
+    (shell-command (format "echo %S | sudo -S %s" (read-passwd "Password: ") cmd))))
+
+(defun sudo-async-shell-command ()
+  (interactive)
+  (let ((cmd (read-string "Command: ")))
+    (async-shell-command (format "echo %S | sudo -S %s" (read-passwd "Password: ") cmd))))

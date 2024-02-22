@@ -10,6 +10,7 @@
 	(evil-define-key 'normal 'global (kbd "<leader>ps") 'projectile-switch-project)
 	(evil-define-key 'normal 'global (kbd "<leader>pc") 'projectile-compile-project)
 	(evil-define-key 'normal 'global (kbd "<leader>p!") 'projectile-run-shell-command-in-root)
+	(evil-define-key 'normal 'global (kbd "<leader>p&") 'projectile-run-async-shell-command-in-root)
 	(evil-define-key 'normal 'global (kbd "<leader>pb") 'projectile-switch-to-buffer)
 	(evil-define-key 'normal 'global (kbd "]d") 'flycheck-next-error)
 	(evil-define-key 'normal 'global (kbd "[d") 'flycheck-previous-error)
